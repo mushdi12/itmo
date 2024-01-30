@@ -1,0 +1,5 @@
+ssh s408319@se.ifmo.ru -p2222
+omKP@1890
+jar --create --main-class=XXX --file XXX.jar XXX.class
+ 18  вариант
+ 
