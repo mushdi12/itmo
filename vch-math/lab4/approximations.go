@@ -140,7 +140,6 @@ func cubicApproximation(x, y []float64) ApproximationResult {
 		CanDraw:  true,
 	}
 
-	// Вычисляем суммы для системы уравнений
 	var (
 		sumX, sumY, sumXY, sumX2, sumX3, sumX4, sumX5, sumX6 float64
 		sumX2Y, sumX3Y                                       float64
@@ -165,7 +164,6 @@ func cubicApproximation(x, y []float64) ApproximationResult {
 		sumX3Y += xi3 * yi
 	}
 
-	// Матрица системы (4x4)
 	A := mat.NewDense(4, 4, []float64{
 		float64(n), sumX, sumX2, sumX3,
 		sumX, sumX2, sumX3, sumX4,
@@ -173,7 +171,6 @@ func cubicApproximation(x, y []float64) ApproximationResult {
 		sumX3, sumX4, sumX5, sumX6,
 	})
 
-	// Вектор правой части
 	B := mat.NewDense(4, 1, []float64{sumY, sumXY, sumX2Y, sumX3Y})
 
 	var coef mat.Dense
@@ -186,7 +183,6 @@ func cubicApproximation(x, y []float64) ApproximationResult {
 		}
 	}
 
-	// Извлекаем коэффициенты
 	a := coef.At(0, 0)
 	b := coef.At(1, 0)
 	c := coef.At(2, 0)
@@ -205,8 +201,6 @@ func cubicApproximation(x, y []float64) ApproximationResult {
 
 	result.YPred = yPred
 	result.RMSE = math.Sqrt(se / float64(n))
-
-	// Вычисляем R² (коэффициент детерминации)
 
 	result.RSquared = calculateRSquared(y, yPred)
 
