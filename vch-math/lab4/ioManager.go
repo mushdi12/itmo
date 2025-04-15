@@ -30,6 +30,7 @@ func inputData() []Point {
 			os.Exit(1)
 		}
 		defer file.Close()
+		fmt.Println("Содержимое файла:")
 
 		scanner := bufio.NewScanner(file)
 		for scanner.Scan() {
@@ -44,7 +45,7 @@ func inputData() []Point {
 			if err1 != nil || err2 != nil {
 				continue
 			}
-
+			fmt.Println(x, y)
 			points = append(points, Point{X: x, Y: y})
 		}
 
