@@ -124,6 +124,15 @@ func quadraticApproximation(x, y []float64) ApproximationResult {
 }
 
 func cubicApproximation(x, y []float64) ApproximationResult {
+	if len(x) != len(y) || len(x) == 0 {
+		return ApproximationResult{
+			Name:      "Кубическая",
+			Function:  "y = a + b*x + c*x^2 + d*x^3",
+			CanDraw:   false,
+			DrawError: "Несоответствие размеров x и y или пустые данные",
+		}
+	}
+
 	n := len(x)
 	result := ApproximationResult{
 		Name:     "Кубическая",
@@ -131,23 +140,32 @@ func cubicApproximation(x, y []float64) ApproximationResult {
 		CanDraw:  true,
 	}
 
-	// Вычисляем суммы
-	var sumX, sumY, sumXY, sumX2, sumX3, sumX4, sumX5, sumX6, sumX2Y, sumX3Y float64
+	// Вычисляем суммы для системы уравнений
+	var (
+		sumX, sumY, sumXY, sumX2, sumX3, sumX4, sumX5, sumX6 float64
+		sumX2Y, sumX3Y                                       float64
+	)
+
 	for i := 0; i < n; i++ {
-		sumX += x[i]
-		sumY += y[i]
-		sumXY += x[i] * y[i]
-		x2 := x[i] * x[i]
-		sumX2 += x2
-		sumX3 += x2 * x[i]
-		sumX4 += x2 * x2
-		sumX5 += sumX4 * x[i]
-		sumX6 += sumX4 * x2
-		sumX2Y += x2 * y[i]
-		sumX3Y += x2 * x[i] * y[i]
+		xi := x[i]
+		xi2 := xi * xi
+		xi3 := xi2 * xi
+		xi4 := xi2 * xi2
+		yi := y[i]
+
+		sumX += xi
+		sumY += yi
+		sumXY += xi * yi
+		sumX2 += xi2
+		sumX3 += xi3
+		sumX4 += xi4
+		sumX5 += xi4 * xi
+		sumX6 += xi4 * xi2
+		sumX2Y += xi2 * yi
+		sumX3Y += xi3 * yi
 	}
 
-	// Создаем матрицу коэффициентов
+	// Матрица системы (4x4)
 	A := mat.NewDense(4, 4, []float64{
 		float64(n), sumX, sumX2, sumX3,
 		sumX, sumX2, sumX3, sumX4,
@@ -155,37 +173,41 @@ func cubicApproximation(x, y []float64) ApproximationResult {
 		sumX3, sumX4, sumX5, sumX6,
 	})
 
-	// Создаем вектор правой части
+	// Вектор правой части
 	B := mat.NewDense(4, 1, []float64{sumY, sumXY, sumX2Y, sumX3Y})
 
-	// Решаем систему уравнений
-	var X mat.Dense
-	err := X.Solve(A, B)
-	if err != nil {
-		result.CanDraw = false
-		result.DrawError = "Не удалось решить систему уравнений"
-		return result
+	var coef mat.Dense
+	if err := coef.Solve(A, B); err != nil {
+		return ApproximationResult{
+			Name:      "Кубическая",
+			Function:  "y = a + b*x + c*x^2 + d*x^3",
+			CanDraw:   false,
+			DrawError: "Система уравнений вырождена или не имеет решения",
+		}
 	}
 
-	a := X.At(0, 0)
-	b := X.At(1, 0)
-	c := X.At(2, 0)
-	d := X.At(3, 0)
+	// Извлекаем коэффициенты
+	a := coef.At(0, 0)
+	b := coef.At(1, 0)
+	c := coef.At(2, 0)
+	d := coef.At(3, 0)
 
 	result.Params = []float64{a, b, c, d}
 
-	// Вычисляем предсказанные значения и среднеквадратичное отклонение
 	yPred := make([]float64, n)
-	var RMSE float64
+	var se float64
+
 	for i := 0; i < n; i++ {
-		yPred[i] = a + b*x[i] + c*x[i]*x[i] + d*x[i]*x[i]*x[i]
-		RMSE += (y[i] - yPred[i]) * (y[i] - yPred[i])
+		xi := x[i]
+		yPred[i] = a + b*xi + c*xi*xi + d*xi*xi*xi
+		se += (y[i] - yPred[i]) * (y[i] - yPred[i])
 	}
-	result.RMSE = math.Sqrt(RMSE / float64(n))
 
 	result.YPred = yPred
+	result.RMSE = math.Sqrt(se / float64(n))
 
-	// Вычисляем R-квадрат
+	// Вычисляем R² (коэффициент детерминации)
+
 	result.RSquared = calculateRSquared(y, yPred)
 
 	return result

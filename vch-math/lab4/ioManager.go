@@ -15,21 +15,23 @@ func inputData() []Point {
 	fmt.Print("Ваш выбор: ")
 
 	var choice int
-	fmt.Scanln(&choice)
+	_, _ = fmt.Scanln(&choice)
 
 	var points []Point
 
 	if choice == 1 {
 		fmt.Print("Введите имя файла: ")
 		var filename string
-		fmt.Scanln(&filename)
+		_, _ = fmt.Scanln(&filename)
 
 		file, err := os.Open(filename)
 		if err != nil {
 			fmt.Printf("Ошибка открытия файла: %v\n", err)
 			os.Exit(1)
 		}
-		defer file.Close()
+		defer func(file *os.File) {
+			_ = file.Close()
+		}(file)
 		fmt.Println("Содержимое файла:")
 
 		scanner := bufio.NewScanner(file)
@@ -57,7 +59,7 @@ func inputData() []Point {
 	} else {
 		fmt.Print("Введите количество точек (8-12): ")
 		var n int
-		fmt.Scanln(&n)
+		_, _ = fmt.Scanln(&n)
 
 		if n < 8 || n > 12 {
 			fmt.Println("Некорректное количество точек!")
