@@ -1,0 +1,255 @@
+import java.security.MessageDigest
+
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.16.1'
+    providedCompile 'jakarta.platform:jakarta.jakartaee-api:11.0.0-M3'
+    implementation 'jakarta.nosql:jakarta.nosql-api:1.0.0-M1'
+    implementation 'org.glassfish.jersey.core:jersey-server:3.1.0'
+    implementation 'org.glassfish.jersey.containers:jersey-container-servlet:3.1.0'
+    implementation 'dev.morphia.morphia:morphia-core:2.3.7'
+    implementation 'org.mongodb:mongodb-driver-sync:4.11.0'
+    implementation 'com.auth0:java-jwt:4.4.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+    implementation 'jakarta.security.enterprise:jakarta.security.enterprise-api:3.0.0'
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
+
+    testImplementation 'org.mockito:mockito-core:5.2.0'
+    testImplementation 'org.mockito:mockito-inline:5.2.0'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.28'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
+}
+
+
+test {
+    useJUnitPlatform()
+}
+
+
+build {
+    dependsOn test
+}
+
+
+war {
+    archiveBaseName = 'backend'
+    archiveVersion = '1.0-SNAPSHOT'
+    destinationDirectory = file("$buildDir/libs")
+}
+
+ext {
+    wildflyDeployPath = '/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/deployments'
+    wildflyBin = '/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/bin'
+}
+
+task compile {
+    group = 'build'
+    dependsOn 'compileJava'
+}
+
+task deploy(type: Copy) {
+    dependsOn 'build'
+    from war.archiveFile.get().asFile
+    into wildflyDeployPath
+    rename { 'backend.war' }
+}
+
+task run(type: Exec) {
+    workingDir = file(wildflyBin)
+    commandLine 'bash', 'standalone.sh'
+}
+
+task buildAndDeploy {
+    dependsOn 'build', 'deploy'
+    finalizedBy 'run'
+}
+
+tasks.named('clean') {
+    group = 'build'
+}
+
+import javax.xml.parsers.DocumentBuilderFactory
+import javax.xml.parsers.DocumentBuilder
+import org.xml.sax.SAXException
+import org.xml.sax.SAXParseException
+
+task validateXml {
+    group = 'verification'
+
+    doLast {
+        def xmlFiles = fileTree(projectDir) {
+            include '**/*.xml'
+        }
+
+        def factory = DocumentBuilderFactory.newInstance()
+        factory.setValidating(false)
+        factory.setNamespaceAware(true)
+
+        int errorCount = 0
+
+        xmlFiles.each { File xmlFile ->
+            try {
+                DocumentBuilder builder = factory.newDocumentBuilder()
+                builder.setErrorHandler([
+                        warning: { SAXParseException e -> println "⚠️ Warning in ${xmlFile}: ${e.message}" },
+                        error:   { SAXParseException e -> throw e },
+                        fatalError: { SAXParseException e -> throw e }
+                ] as org.xml.sax.ErrorHandler)
+
+                builder.parse(xmlFile)
+                println "✅ Valid: ${xmlFile}"
+            } catch (SAXParseException e) {
+                println "❌ Invalid XML: ${xmlFile} (${e.lineNumber}:${e.columnNumber}) — ${e.message}"
+                errorCount++
+            } catch (SAXException | IOException e) {
+                println "❌ Error parsing ${xmlFile}: ${e.message}"
+                errorCount++
+            }
+        }
+
+        if (errorCount > 0) {
+            println "Найдено $errorCount XML-файлов с ошибками."
+        } else {
+            println "✅ Все XML-файлы валидны."
+        }
+    }
+}
+
+// Функция для проверки, была ли ошибка в сборке
+def isBuildSuccessful = { ->
+    gradle.taskGraph.allTasks.find { it.state.failure != null } == null
+}
+
+task music {
+    group = 'notification'
+    description = 'Воспроизводит музыку после успешной сборки'
+
+    doLast {
+        if (!isBuildSuccessful()) {
+            println "Сборка завершилась с ошибками — музыка не проигрывается."
+            return
+        }
+
+        def filePath = "${projectDir}/success.mp3"
+        if (!file(filePath).exists()) {
+            println "Файл музыки $filePath не найден."
+            return
+        }
+
+        def osName = System.getProperty("os.name").toLowerCase()
+        def command = null
+
+        if (osName.contains("mac")) {
+            command = ['afplay', filePath]
+        } else {
+            def hasMpg123 = "which mpg123".execute().text.trim()
+            def hasFfplay = "which ffplay".execute().text.trim()
+
+            if (hasMpg123) {
+                command = ['mpg123', '-q', filePath]
+            } else if (hasFfplay) {
+                command = ['ffplay', '-nodisp', '-autoexit', '-loglevel', 'quiet', filePath]
+            } else {
+                println "Не найден mpg123 или ffplay — музыку не воспроизводим."
+                return
+            }
+        }
+
+        try {
+            def process = command.execute()
+            process.consumeProcessOutput(new ByteArrayOutputStream(), new ByteArrayOutputStream()) // без вывода
+            process.waitFor()
+            if (process.exitValue() != 0) {
+                println "Ошибка воспроизведения музыки."
+            }
+        } catch (Exception e) {
+            println "Не удалось воспроизвести музыку: ${e.message}"
+        }
+    }
+}
+
+// music запускается всегда после build
+build.finalizedBy music
+
+task native2ascii(type: Exec) {
+    inputs.file 'src/main/resources/messages_ru.properties'
+    outputs.file 'build/resources/main/messages_ru_ascii.properties'
+
+    commandLine 'native2ascii', 'src/main/resources/messages_ru.properties', 'build/resources/main/messages_ru_ascii.properties'
+}
+
+// Функция для вычисления хэша файла
+def hashFile(File file, String algorithm) {
+    MessageDigest digest = MessageDigest.getInstance(algorithm)
+    file.withInputStream { is ->
+        byte[] buffer = new byte[8192]
+        int read
+        while ((read = is.read(buffer)) != -1) {
+            digest.update(buffer, 0, read)
+        }
+    }
+    return digest.digest().encodeHex().toString()
+}
+
+task doc(type: Jar) {
+    dependsOn javadoc, war
+    archiveClassifier = 'doc'  // lab4-1.0-SNAPSHOT-doc.jar
+
+    from javadoc.destinationDir
+
+    doFirst {
+        def warFile = war.archiveFile.get().asFile
+        def md5 = hashFile(warFile, "MD5")
+        def sha1 = hashFile(warFile, "SHA-1")
+
+        manifest {
+            attributes(
+                    "Implementation-Title": project.name,
+                    "Implementation-Version": project.version,
+                    "MD5-Checksum": md5,
+                    "SHA1-Checksum": sha1
+            )
+        }
+    }
+}
+
+task scpDeploy(type: Exec) {
+    group = 'deployment'
+    description = 'Заливает .war на удалённый сервер по SCP'
+
+    def warFile = war.archiveFile.get().asFile
+    def remoteUser = 's408319'
+    def remoteHost = 'se.ifmo.ru'
+    def remotePort = '2222'
+    def remoteDir = '/home/studs/s408319/opi'
+
+    dependsOn war
+
+    doFirst {
+        println "📦 Отправка ${warFile} на ${remoteUser}@${remoteHost}:${remoteDir}"
+    }
+
+    commandLine 'scp', '-P', remotePort, warFile.toString(), "${remoteUser}@${remoteHost}:${remoteDir}"
+}
+
+// Автоматически вызывает scpDeploy после успешной сборки
+build.finalizedBy scpDeploy

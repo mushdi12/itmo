@@ -1,0 +1,56 @@
+.popupWrapper {
+    position: relative;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    animation: fadeIn 0.5s forwards;
+    margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.popupWrapper button {
+    pointer-events: auto;
+    z-index: 999;
+    background-color: #000000;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.popupWrapper button:hover {
+    transform: scale(1.05);
+}
+
+.popupWrapper button:active {
+    background-color: #b3e600;
+    color: #000000;
+}
+
+.modalControlContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    pointer-events: none;
+}

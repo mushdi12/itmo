@@ -1,0 +1,47 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 80%;
+    margin-left: 10%;
+    box-sizing: border-box;
+}
+
+.buttonContainer,
+.pageLabelContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.pageButton {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 120px;
+    text-align: center;
+}
+
+.pageButton:hover {
+    transform: scale(1.05);
+}
+
+.pageButton:active {
+    background-color: #b3e600;
+    color: black;
+}
+
+.pageLabelContainer label {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}

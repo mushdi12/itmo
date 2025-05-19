@@ -1,0 +1,107 @@
+body {
+    font-family: sans-serif;
+    background-color: cadetblue;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #f2f2f2;
+    padding: 5px;
+    text-align: center;
+    opacity: 0.5;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+
+
+.clock {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 10px solid #4CAF50;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 80px;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hour-mark {
+    position: absolute;
+    width: 275px;
+    height: 230px;
+    text-align: center;
+    line-height: 200px;
+    font-size: 14px;
+    color: #333;
+    transform-origin: bottom;
+    bottom: 140px;
+}
+
+.hand {
+    position: absolute;
+    background: #333;
+    border-radius: 10px;
+    transform-origin: bottom;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hour {
+    width: 7px;
+    height: 80px;
+}
+
+.minute {
+    width: 4px;
+    height: 125px;
+}
+
+.second {
+    width: 2px;
+    height: 125px;
+    background: red;
+}
+
+.center {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #333;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.styled-link {
+    display: inline-block;
+    padding: 10px 50px;
+    background-color: #4CAF50;
+    color: white;
+    margin-left: 40%;
+    margin-top: 8%;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.styled-link:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.styled-link:active {
+    transform: scale(0.95);
+}

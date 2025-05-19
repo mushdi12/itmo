@@ -1,0 +1,127 @@
+.form {
+    max-width: 400px;
+    margin: 75px auto;
+    padding: 20px;
+    background-color: #000000;
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #ffffff; /* Белый текст */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.verticalSpaceContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.horizontalSpaceContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.regButton {
+    background-color: #ffffff;
+    color: #000000; /* Черный текст */
+    border: 2px solid #ffffff; /* Белая граница */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    width: 150px;
+}
+
+.regButton:hover {
+    transform: scale(1.05);
+}
+
+.regButton:active {
+    background-color: #b3e600;
+    border-color: #b3e600;
+}
+
+.inputText {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ffffff;
+    margin-top: 5px;
+    box-sizing: border-box;
+    background-color: #000000;
+    color: #ffffff;
+    opacity: 0;
+    animation: fadeInField 0.25s forwards;
+}
+
+@keyframes fadeInField {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.inputText:focus {
+    border-color: #ccff00;
+    outline: none;
+}
+
+.verticalLeftContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.verticalLeftContainer div {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.regButton[type="submit"] {
+    background-color: #ffffff;
+    color: #000000;
+    opacity: 0;
+    width: 100%;
+    animation: fadeInButton 0.25s 0.25s forwards;
+}
+
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.regButton[type="submit"]:hover {
+    transform: scale(1.05);
+}
+
+.regButton[type="submit"]:active {
+    background-color: #b3e600;
+    border-color: #b3e600;
+    color: black;
+}

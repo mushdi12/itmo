@@ -1,0 +1,9 @@
+export const INCORRECT_LOGIN_MESSAGE: string = "Incorrect login or password";
+export const NOT_REPEATABLE_PASSWORD_MESSAGE: string = "The passwords doesn't match";
+export const R_DOESNT_SELECT_MESSAGE: string = "R is not selected";
+export const SERVER_UNAVAILABLE_MESSAGE: string = "Server is unavailable";
+export const USER_ALREADY_EXISTS_MESSAGE: string = "User already exists";
+export const USER_DOESNT_EXIST_MESSAGE: string = "User doesn't exists";
+export const SERVER_ERROR_MESSAGE: string = "Server error";
+export const X_DOESNT_SELECT_MESSAGE: string = "X is not selected";
+export const Y_INCORRECT_VALUE: string = "Y value must be number in {-3...3}"
