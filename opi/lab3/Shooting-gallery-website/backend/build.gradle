@@ -110,8 +110,8 @@ task validateXml {
             try {
                 DocumentBuilder builder = factory.newDocumentBuilder()
                 builder.setErrorHandler([
-                        warning: { SAXParseException e -> println "⚠️ Warning in ${xmlFile}: ${e.message}" },
-                        error:   { SAXParseException e -> throw e },
+                        warning   : { SAXParseException e -> println "⚠️ Warning in ${xmlFile}: ${e.message}" },
+                        error     : { SAXParseException e -> throw e },
                         fatalError: { SAXParseException e -> throw e }
                 ] as org.xml.sax.ErrorHandler)
 
@@ -253,3 +253,107 @@ task scpDeploy(type: Exec) {
 
 // Автоматически вызывает scpDeploy после успешной сборки
 build.finalizedBy scpDeploy
+
+task report {
+    group = 'verification'
+    description = 'Добавляет JUnit XML отчет в git и коммитит его после успешных тестов'
+
+    dependsOn test
+
+    doLast {
+        if (test.state.failure != null) {
+            println "Тесты не прошли, отчет не будет закоммичен."
+            return
+        }
+
+        def reportDir = file("${buildDir}/test-results/test")
+        if (!reportDir.exists()) {
+            println "Отчеты JUnit не найдены в ${reportDir}"
+            return
+        }
+
+        def xmlFiles = fileTree(reportDir) {
+            include '**/*.xml'
+        }.files
+
+        if (xmlFiles.isEmpty()) {
+            println "Не найдено xml-файлов для добавления."
+            return
+        }
+
+// Добавляем файлы в git по отдельности
+        xmlFiles.each { file ->
+            // Вычисляем путь относительно корня проекта (rootDir)
+            def relativePath = file.absolutePath - project.rootDir.absolutePath
+            if (relativePath.startsWith(File.separator)) {
+                relativePath = relativePath.substring(1)
+            }
+
+            exec {
+                commandLine 'git', 'add', relativePath
+            }
+        }
+        // Коммитим изменения
+        def commitMessage = "Add JUnit test report - ${new Date().format('yyyy-MM-dd HH:mm:ss')}"
+        def commitResult = exec {
+            commandLine 'git', 'commit', '-m', commitMessage
+            ignoreExitValue true // чтобы не падать если нет изменений для коммита
+        }
+
+        println "Отчеты JUnit добавлены и коммичены (если были изменения)."
+    }
+}
+
+task diff {
+    group = 'version control'
+    description = 'Проверяет изменения по списку файлов из gradle.properties и делает git commit'
+
+    doLast {
+        def patternsProp = project.findProperty('diffFiles')
+        if (!patternsProp || patternsProp.trim().isEmpty()) {
+            throw new GradleException("Параметр 'diffFiles' не задан в gradle.properties")
+        }
+
+        def patterns = patternsProp
+                .split(',')
+                .collect { it.trim().replace('\\', '/') }
+
+        def stdout = new ByteArrayOutputStream()
+        exec {
+            workingDir = project.rootDir
+            commandLine 'git', 'diff', '--name-only'
+            standardOutput = stdout
+        }
+
+        def changedFiles = stdout.toString().readLines().collect {
+            it.replace(File.separator, '/')
+        }
+
+        println "Изменённые файлы:"
+        changedFiles.each { println " - $it" }
+
+        def filesToCommit = changedFiles.findAll { file ->
+            patterns.any { pattern -> file.contains(pattern) }
+        }
+
+        if (filesToCommit.isEmpty()) {
+            println 'Изменений по указанным файлам нет. Коммит не требуется.'
+            throw new StopExecutionException()
+        }
+
+        println "Файлы для коммита:"
+        filesToCommit.each { println " - $it" }
+
+        exec {
+            workingDir = project.rootDir
+            commandLine 'git', 'add', *filesToCommit
+        }
+
+        exec {
+            workingDir = project.rootDir
+            commandLine 'git', 'commit', '-m', "Автоматический коммит изменений по diff"
+        }
+    }
+}
+
+
