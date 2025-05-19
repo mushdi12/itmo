@@ -5,4 +5,5 @@ public class TestingDiff {
     Integer age;
     String gender;
     String address;
+    String phone;
 }
