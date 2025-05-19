@@ -313,30 +313,39 @@ task diff {
             standardOutput = stdout
         }
 
-        def statusLines = stdout.toString().readLines()
-                .findAll { it.trim() }
+        def statusLines = stdout.toString().readLines().findAll { it.trim() }
 
         if (statusLines.isEmpty()) {
             println "Нет изменений для коммита."
             return
         }
 
-        println "Файлы для коммита:"
-        statusLines.each { println " - $it" }
-
-        // Добавим все изменения включая новые файлы
-        exec {
-            workingDir = project.rootDir
-            commandLine 'git', 'add', '-A'
+        def filesToAdd = statusLines.collect { line ->
+            line.substring(3).trim()
+        }.findAll { file ->
+            new File(project.rootDir, file).exists()
         }
 
-        // Коммитим
+        if (filesToAdd.isEmpty()) {
+            println "Изменений для коммита нет."
+            return
+        }
+
+        println "Файлы для коммита:"
+        filesToAdd.each { println " - $it" }
+
+        exec {
+            workingDir = project.rootDir
+            commandLine 'git', 'add', *filesToAdd
+        }
+
         exec {
             workingDir = project.rootDir
             commandLine 'git', 'commit', '-m', "Автоматический коммит изменений"
         }
     }
 }
+
 
 
 
