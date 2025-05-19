@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="backend.auth.mongodb.UserMongodbManagerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-05-18T21:47:30" hostname="katana-76" time="0.305">
+  <properties/>
+  <testcase name="testUpdateUserNotFound()" classname="backend.auth.mongodb.UserMongodbManagerTest" time="0.27"/>
+  <testcase name="testDeleteUserSuccess()" classname="backend.auth.mongodb.UserMongodbManagerTest" time="0.027"/>
+  <testcase name="testDeleteUserFail()" classname="backend.auth.mongodb.UserMongodbManagerTest" time="0.003"/>
+  <testcase name="testGetUserByUsernameSuccess()" classname="backend.auth.mongodb.UserMongodbManagerTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
