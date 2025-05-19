@@ -305,55 +305,41 @@ task report {
 }
 
 task diff {
-    group = 'version control'
-    description = 'Проверяет изменения по списку файлов из gradle.properties и делает git commit'
-
     doLast {
-        def patternsProp = project.findProperty('diffFiles')
-        if (!patternsProp || patternsProp.trim().isEmpty()) {
-            throw new GradleException("Параметр 'diffFiles' не задан в gradle.properties")
-        }
-
-        def patterns = patternsProp
-                .split(',')
-                .collect { it.trim().replace('\\', '/') }
-
         def stdout = new ByteArrayOutputStream()
         exec {
             workingDir = project.rootDir
-            commandLine 'git', 'diff', '--name-only'
+            commandLine 'git', 'status', '-s'
             standardOutput = stdout
         }
 
-        def changedFiles = stdout.toString().readLines().collect {
-            it.replace(File.separator, '/')
-        }
+        def statusLines = stdout.toString().readLines()
+                .findAll { it.trim() }
 
-        println "Изменённые файлы:"
-        changedFiles.each { println " - $it" }
-
-        def filesToCommit = changedFiles.findAll { file ->
-            patterns.any { pattern -> file.contains(pattern) }
-        }
-
-        if (filesToCommit.isEmpty()) {
-            println 'Изменений по указанным файлам нет. Коммит не требуется.'
-            throw new StopExecutionException()
+        if (statusLines.isEmpty()) {
+            println "Нет изменений для коммита."
+            return
         }
 
         println "Файлы для коммита:"
-        filesToCommit.each { println " - $it" }
+        statusLines.each { println " - $it" }
 
+        // Добавим все изменения включая новые файлы
         exec {
             workingDir = project.rootDir
-            commandLine 'git', 'add', *filesToCommit
+            commandLine 'git', 'add', '-A'
         }
 
+        // Коммитим
         exec {
             workingDir = project.rootDir
-            commandLine 'git', 'commit', '-m', "Автоматический коммит изменений по diff"
+            commandLine 'git', 'commit', '-m', "Автоматический коммит изменений"
         }
     }
 }
+
+
+
+
 
 
