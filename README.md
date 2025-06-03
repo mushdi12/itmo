@@ -1,2 +1,1 @@
-# itmo
-my studies at ITMO
+TODO: написать описание
