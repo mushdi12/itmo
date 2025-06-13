@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="backend.points.PointsControllerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-05-29T11:27:46" hostname="katana-76" time="0.053">
+  <properties/>
+  <testcase name="testGetPointsSlice_Success()" classname="backend.points.PointsControllerTest" time="0.049"/>
+  <testcase name="testGetPointsSlice_InvalidJson()" classname="backend.points.PointsControllerTest" time="0.001"/>
+  <testcase name="testCreatePoint_InvalidJson()" classname="backend.points.PointsControllerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,32 @@
+.header{
+    font-family: "Saira", sans-serif;
+    background: black;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    border-bottom: solid white 2px;
+}
+
+.header-text{
+    font-family: Saira, sans-serif;
+    color: white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.vertical-space-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.horizontal-space-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

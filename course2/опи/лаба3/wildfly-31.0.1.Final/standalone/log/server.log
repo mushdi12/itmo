@@ -1,0 +1,1486 @@
+2025-05-29 14:24:26,019 INFO  [org.jboss.modules] (main) JBoss Modules version 2.1.2.Final
+2025-05-29 14:24:26,503 INFO  [org.jboss.msc] (main) JBoss MSC version 1.5.2.Final
+2025-05-29 14:24:26,511 INFO  [org.jboss.threads] (main) JBoss Threads version 2.4.0.Final
+2025-05-29 14:24:26,612 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 31.0.1.Final (WildFly Core 23.0.3.Final) starting
+2025-05-29 14:24:26,613 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Configured system properties:
+	[Standalone] = 
+	file.encoding = UTF-8
+	file.separator = /
+	java.awt.headless = true
+	java.class.path = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/jboss-modules.jar
+	java.class.version = 61.0
+	java.home = /usr/lib/jvm/java-17-openjdk-amd64
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 17.0.14+7-Debian-1deb12u1
+	java.security.manager = allow
+	java.specification.maintenance.version = 1
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 17
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Debian
+	java.vendor.url = https://tracker.debian.org/openjdk-17
+	java.vendor.url.bug = https://bugs.debian.org/openjdk-17
+	java.version = 17.0.14
+	java.version.date = 2025-01-21
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 17
+	java.vm.vendor = Debian
+	java.vm.version = 17.0.14+7-Debian-1deb12u1
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.home.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final
+	jboss.host.name = katana-76
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = katana-76
+	jboss.qualified.host.name = katana-76
+	jboss.server.base.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone
+	jboss.server.config.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration
+	jboss.server.data.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/data
+	jboss.server.log.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/log
+	jboss.server.name = katana-76
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/tmp
+	jdk.debug = release
+	jdk.serialFilter = maxbytes=10485760;maxdepth=128;maxarray=100000;maxrefs=300000
+	line.separator = 
+
+	logging.configuration = file:/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/logging.properties
+	module.path = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/modules
+	native.encoding = UTF-8
+	org.jboss.boot.log.file = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Linux
+	os.version = 5.15.167.4-microsoft-standard-WSL2
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.library.path = /usr/lib/jvm/java-17-openjdk-amd64/lib
+	sun.cpu.endian = little
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/jboss-modules.jar -mp /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/modules org.jboss.as.standalone -Djboss.home.dir=/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final -Djboss.server.base.dir=/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	user.country = US
+	user.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/bin
+	user.home = /home/mushdi12
+	user.language = en
+	user.name = mushdi12
+	user.timezone = Europe/Moscow
+2025-05-29 14:24:26,613 DEBUG [org.jboss.as.config] (MSC service thread 1-2) VM Arguments: -D[Standalone] -Djdk.serialFilter=maxbytes=10485760;maxdepth=128;maxarray=100000;maxrefs=300000 -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true --add-exports=java.desktop/sun.awt=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldaps=ALL-UNNAMED --add-exports=jdk.naming.dns/com.sun.jndi.dns=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.management/javax.management=ALL-UNNAMED --add-opens=java.naming/javax.naming=ALL-UNNAMED -Djava.security.manager=allow -Dorg.jboss.boot.log.file=/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/log/server.log -Dlogging.configuration=file:/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/logging.properties 
+2025-05-29 14:24:27,147 INFO  [org.wildfly.security] (ServerService Thread Pool -- 28) ELY00001: WildFly Elytron version 2.2.3.Final
+2025-05-29 14:24:27,582 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 23) WFLYCTL0028: Attribute 'cluster' in the resource at address '/subsystem=ejb3/service=remote' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2025-05-29 14:24:27,832 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2025-05-29 14:24:27,847 INFO  [org.xnio] (MSC service thread 1-8) XNIO version 3.8.13.Final
+2025-05-29 14:24:27,853 INFO  [org.xnio.nio] (MSC service thread 1-8) XNIO NIO Implementation Version 3.8.13.Final
+2025-05-29 14:24:27,868 INFO  [org.wildfly.extension.elytron.oidc._private] (ServerService Thread Pool -- 53) WFLYOIDC0001: Activating WildFly Elytron OIDC Subsystem
+2025-05-29 14:24:27,878 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 55) WFLYCLINF0001: Activating Infinispan subsystem.
+2025-05-29 14:24:27,878 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 56) WFLYIO001: Worker 'default' has auto-configured to 24 IO threads with 192 max task threads based on your 12 available processors
+2025-05-29 14:24:27,879 INFO  [org.wildfly.extension.health] (ServerService Thread Pool -- 54) WFLYHEALTH0001: Activating Base Health Subsystem
+2025-05-29 14:24:27,880 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2025-05-29 14:24:27,880 INFO  [org.wildfly.extension.microprofile.jwt.smallrye] (ServerService Thread Pool -- 66) WFLYJWT0001: Activating MicroProfile JWT Subsystem
+2025-05-29 14:24:27,881 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 67) WFLYNAM0001: Activating Naming Subsystem
+2025-05-29 14:24:27,885 INFO  [org.wildfly.extension.microprofile.config.smallrye] (ServerService Thread Pool -- 65) WFLYCONF0001: Activating MicroProfile Config Subsystem
+2025-05-29 14:24:27,904 INFO  [org.wildfly.extension.metrics] (ServerService Thread Pool -- 64) WFLYMETRICS0001: Activating Base Metrics Subsystem
+2025-05-29 14:24:27,908 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 57) WFLYRS0016: RESTEasy version 6.2.7.Final
+2025-05-29 14:24:27,912 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 62) WFLYJSF0007: Activated the following Jakarta Server Faces Implementations: [main]
+2025-05-29 14:24:27,914 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: Activating WebServices Extension
+2025-05-29 14:24:27,924 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "backend.war" (runtime-name: "backend.war")
+2025-05-29 14:24:27,927 INFO  [org.jboss.as.connector] (MSC service thread 1-6) WFLYJCA0009: Starting Jakarta Connectors Subsystem (WildFly/IronJacamar 3.0.8.Final)
+2025-05-29 14:24:27,946 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "backend-1.0-SNAPSHOT.war" (runtime-name: "backend-1.0-SNAPSHOT.war")
+2025-05-29 14:24:27,954 INFO  [org.jboss.as.naming] (MSC service thread 1-7) WFLYNAM0003: Starting Naming Service
+2025-05-29 14:24:27,927 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 2.2)
+2025-05-29 14:24:27,958 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0018: Started Driver service with driver-name = h2
+2025-05-29 14:24:27,980 INFO  [org.jboss.remoting] (MSC service thread 1-8) JBoss Remoting version 5.0.28.Final
+2025-05-29 14:24:27,994 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0003: Undertow 2.3.12.Final starting
+2025-05-29 14:24:27,998 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-3) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2025-05-29 14:24:28,034 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-7) WFLYELY00023: KeyStore file '/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/application.keystore' does not exist. Used blank.
+2025-05-29 14:24:28,059 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-4) WFLYELY01084: KeyStore /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/application.keystore not found, it will be auto-generated on first use with a self-signed certificate for host localhost
+2025-05-29 14:24:28,070 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path '/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2025-05-29 14:24:28,071 INFO  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 192 (per class), which is derived from thread worker pool sizing.
+2025-05-29 14:24:28,072 INFO  [org.jboss.as.ejb3] (MSC service thread 1-6) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 48 (per class), which is derived from the number of CPUs on this host.
+2025-05-29 14:24:28,087 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0012: Started server default-server.
+2025-05-29 14:24:28,088 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) Queuing requests.
+2025-05-29 14:24:28,088 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0018: Host default-host starting
+2025-05-29 14:24:28,184 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2025-05-29 14:24:28,240 INFO  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0493: Jakarta Enterprise Beans subsystem suspension complete
+2025-05-29 14:24:28,276 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2025-05-29 14:24:28,300 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2025-05-29 14:24:28,434 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-7) WFLYDS0013: Started FileSystemDeploymentService for directory /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/deployments
+2025-05-29 14:24:28,538 INFO  [org.jboss.ws.common.management] (MSC service thread 1-4) JBWS022052: Starting JBossWS 7.0.0.Final (Apache CXF 4.0.0) 
+2025-05-29 14:24:30,410 INFO  [org.jboss.as.jpa] (MSC service thread 1-4) WFLYJPA0002: Read persistence.xml for default
+2025-05-29 14:24:30,410 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) WFLYJPA0002: Read persistence.xml for default
+2025-05-29 14:24:30,573 INFO  [org.jipijapa] (MSC service thread 1-2) JIPIORMV6020260: Second level cache enabled for backend.war#default
+2025-05-29 14:24:30,573 INFO  [org.jipijapa] (MSC service thread 1-1) JIPIORMV6020260: Second level cache enabled for backend-1.0-SNAPSHOT.war#default
+2025-05-29 14:24:30,724 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) WFLYWELD0003: Processing weld deployment backend-1.0-SNAPSHOT.war
+2025-05-29 14:24:30,724 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment backend.war
+2025-05-29 14:24:30,877 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-3) HV000001: Hibernate Validator 8.0.1.Final
+2025-05-29 14:24:31,345 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'PointMongodbManger' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:app/backend/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:module/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:global/backend/PointMongodbManger
+	java:app/backend/PointMongodbManger
+	java:module/PointMongodbManger
+
+2025-05-29 14:24:31,346 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'UserMongodbManager' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:app/backend/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:module/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:global/backend/UserMongodbManager
+	java:app/backend/UserMongodbManager
+	java:module/UserMongodbManager
+
+2025-05-29 14:24:31,346 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'PointMongodbManger' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:app/backend-1.0-SNAPSHOT/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:module/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:global/backend-1.0-SNAPSHOT/PointMongodbManger
+	java:app/backend-1.0-SNAPSHOT/PointMongodbManger
+	java:module/PointMongodbManger
+
+2025-05-29 14:24:31,346 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'JwtUtil' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:app/backend/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:module/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:global/backend/JwtUtil
+	java:app/backend/JwtUtil
+	java:module/JwtUtil
+
+2025-05-29 14:24:31,346 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'UserMongodbManager' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:app/backend-1.0-SNAPSHOT/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:module/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:global/backend-1.0-SNAPSHOT/UserMongodbManager
+	java:app/backend-1.0-SNAPSHOT/UserMongodbManager
+	java:module/UserMongodbManager
+
+2025-05-29 14:24:31,346 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'JwtUtil' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:app/backend-1.0-SNAPSHOT/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:module/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:global/backend-1.0-SNAPSHOT/JwtUtil
+	java:app/backend-1.0-SNAPSHOT/JwtUtil
+	java:module/JwtUtil
+
+2025-05-29 14:24:31,346 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'AuthService' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/AuthService!com.example.backend.auth.AuthService
+	java:app/backend/AuthService!com.example.backend.auth.AuthService
+	java:module/AuthService!com.example.backend.auth.AuthService
+	java:global/backend/AuthService
+	java:app/backend/AuthService
+	java:module/AuthService
+
+2025-05-29 14:24:31,347 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'AuthService' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/AuthService!com.example.backend.auth.AuthService
+	java:app/backend-1.0-SNAPSHOT/AuthService!com.example.backend.auth.AuthService
+	java:module/AuthService!com.example.backend.auth.AuthService
+	java:global/backend-1.0-SNAPSHOT/AuthService
+	java:app/backend-1.0-SNAPSHOT/AuthService
+	java:module/AuthService
+
+2025-05-29 14:24:31,347 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'PointsService' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/PointsService!com.example.backend.points.PointsService
+	java:app/backend/PointsService!com.example.backend.points.PointsService
+	java:module/PointsService!com.example.backend.points.PointsService
+	java:global/backend/PointsService
+	java:app/backend/PointsService
+	java:module/PointsService
+
+2025-05-29 14:24:31,347 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'PointsService' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/PointsService!com.example.backend.points.PointsService
+	java:app/backend-1.0-SNAPSHOT/PointsService!com.example.backend.points.PointsService
+	java:module/PointsService!com.example.backend.points.PointsService
+	java:global/backend-1.0-SNAPSHOT/PointsService
+	java:app/backend-1.0-SNAPSHOT/PointsService
+	java:module/PointsService
+
+2025-05-29 14:24:31,728 WARN  [org.jboss.as.ejb3] (MSC service thread 1-6) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (verifyToken)
+2025-05-29 14:24:31,728 WARN  [org.jboss.as.ejb3] (MSC service thread 1-6) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (generateTokensByUser)
+2025-05-29 14:24:31,728 WARN  [org.jboss.as.ejb3] (MSC service thread 1-6) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (getUsernameFromToken)
+2025-05-29 14:24:31,729 WARN  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (verifyToken)
+2025-05-29 14:24:31,729 WARN  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (generateTokensByUser)
+2025-05-29 14:24:31,729 WARN  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (getUsernameFromToken)
+2025-05-29 14:24:31,815 INFO  [org.jipijapa] (MSC service thread 1-3) JIPIORMV6020260: Second level cache enabled for backend.war#default
+2025-05-29 14:24:31,816 INFO  [org.jipijapa] (MSC service thread 1-6) JIPIORMV6020260: Second level cache enabled for backend-1.0-SNAPSHOT.war#default
+2025-05-29 14:24:31,824 INFO  [org.infinispan.CONTAINER] (ServerService Thread Pool -- 78) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2025-05-29 14:24:31,894 WARN  [org.jboss.as.jaxrs] (MSC service thread 1-6) WFLYRS0018: Explicit usage of Jackson annotation in a Jakarta RESTful Web Services deployment; the system will disable Jakarta JSON Binding processing for the current deployment. Consider setting the 'resteasy.preferJacksonOverJsonB' property to 'false' to restore Jakarta JSON Binding.
+2025-05-29 14:24:31,894 WARN  [org.jboss.as.jaxrs] (MSC service thread 1-3) WFLYRS0018: Explicit usage of Jackson annotation in a Jakarta RESTful Web Services deployment; the system will disable Jakarta JSON Binding processing for the current deployment. Consider setting the 'resteasy.preferJacksonOverJsonB' property to 'false' to restore Jakarta JSON Binding.
+2025-05-29 14:24:31,941 INFO  [org.jboss.weld.Version] (MSC service thread 1-6) WELD-000900: 5.1.2 (Final)
+2025-05-29 14:24:32,306 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 78) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:24:32,306 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 79) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'backend.war#default'
+2025-05-29 14:24:32,326 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 78) HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29 14:24:32,326 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 79) HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29 14:24:32,419 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 78) HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-29 14:24:32,720 INFO  [org.hibernate.cache.internal.RegionFactoryInitiator] (ServerService Thread Pool -- 79) HHH000025: Second-level cache region factory [org.infinispan.hibernate.cache.v62.InfinispanRegionFactory]
+2025-05-29 14:24:32,720 INFO  [org.hibernate.cache.internal.RegionFactoryInitiator] (ServerService Thread Pool -- 78) HHH000025: Second-level cache region factory [org.infinispan.hibernate.cache.v62.InfinispanRegionFactory]
+2025-05-29 14:24:32,797 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 78) Envers integration enabled? : true
+2025-05-29 14:24:32,797 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 79) Envers integration enabled? : true
+2025-05-29 14:24:32,956 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 79) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:24:32,956 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 78) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'backend.war#default'
+2025-05-29 14:24:33,895 INFO  [org.wildfly.security.soteria.original.SamRegistrationInstaller] (ServerService Thread Pool -- 78) Initializing Soteria 3.0.3.Final for context '/backend-1.0-SNAPSHOT'
+2025-05-29 14:24:34,315 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 78) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class com.example.backend.webApp.MainApp
+2025-05-29 14:24:34,315 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 83) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class com.example.backend.webApp.MainApp
+2025-05-29 14:24:34,316 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 78) RESTEASY002200: Adding class resource com.example.backend.points.PointsController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:24:34,316 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 83) RESTEASY002200: Adding class resource com.example.backend.auth.AuthController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:24:34,316 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 78) RESTEASY002200: Adding class resource com.example.backend.auth.AuthController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:24:34,316 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 78) RESTEASY002205: Adding provider class com.example.backend.auth.jwt.JwtAuthenticationFilter from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:24:34,316 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 83) RESTEASY002200: Adding class resource com.example.backend.points.PointsController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:24:34,316 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 83) RESTEASY002205: Adding provider class com.example.backend.auth.jwt.JwtAuthenticationFilter from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:24:34,358 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 78) WFLYUT0021: Registered web context: '/backend-1.0-SNAPSHOT' for server 'default-server'
+2025-05-29 14:24:34,358 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 83) WFLYUT0021: Registered web context: '/backend' for server 'default-server'
+2025-05-29 14:24:34,411 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 45) WFLYSRV0010: Deployed "backend.war" (runtime-name : "backend.war")
+2025-05-29 14:24:34,411 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 45) WFLYSRV0010: Deployed "backend-1.0-SNAPSHOT.war" (runtime-name : "backend-1.0-SNAPSHOT.war")
+2025-05-29 14:24:34,445 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2025-05-29 14:24:34,448 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2025-05-29 14:24:34,448 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2025-05-29 14:24:34,450 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 31.0.1.Final (WildFly Core 23.0.3.Final) started in 8685ms - Started 672 of 872 services (327 services are lazy, passive or on-demand) - Server configuration file in use: standalone.xml
+2025-05-29 14:24:52,559 INFO  [org.mongodb.driver.client] (default task-2) MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.11.0"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.15.167.4-microsoft-standard-WSL2"}, "platform": "Java/Debian/17.0.14+7-Debian-1deb12u1"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@1acc8f86, com.mongodb.Jep395RecordCodecProvider@1da1749, com.mongodb.KotlinCodecProvider@69e1b150]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2025-05-29 14:24:52,581 INFO  [org.mongodb.driver.cluster] (cluster-ClusterId{value='68384404ca96686225884a2a', description='null'}-localhost:27017) Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=22876228}
+2025-05-29 14:25:10,676 INFO  [org.mongodb.driver.client] (default task-1) MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.11.0"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.15.167.4-microsoft-standard-WSL2"}, "platform": "Java/Debian/17.0.14+7-Debian-1deb12u1"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@1acc8f86, com.mongodb.Jep395RecordCodecProvider@1da1749, com.mongodb.KotlinCodecProvider@69e1b150]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2025-05-29 14:25:10,676 INFO  [org.mongodb.driver.cluster] (cluster-ClusterId{value='68384416ca96686225884a2b', description='null'}-localhost:27017) Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=968917}
+2025-05-29 14:33:57,266 INFO  [org.jboss.modules] (main) JBoss Modules version 2.1.2.Final
+2025-05-29 14:33:57,660 INFO  [org.jboss.msc] (main) JBoss MSC version 1.5.2.Final
+2025-05-29 14:33:57,667 INFO  [org.jboss.threads] (main) JBoss Threads version 2.4.0.Final
+2025-05-29 14:33:57,744 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 31.0.1.Final (WildFly Core 23.0.3.Final) starting
+2025-05-29 14:33:57,745 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Configured system properties:
+	[Standalone] = 
+	file.encoding = UTF-8
+	file.separator = /
+	java.awt.headless = true
+	java.class.path = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/jboss-modules.jar
+	java.class.version = 61.0
+	java.home = /usr/lib/jvm/java-17-openjdk-amd64
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 17.0.14+7-Debian-1deb12u1
+	java.security.manager = allow
+	java.specification.maintenance.version = 1
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 17
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Debian
+	java.vendor.url = https://tracker.debian.org/openjdk-17
+	java.vendor.url.bug = https://bugs.debian.org/openjdk-17
+	java.version = 17.0.14
+	java.version.date = 2025-01-21
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 17
+	java.vm.vendor = Debian
+	java.vm.version = 17.0.14+7-Debian-1deb12u1
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.home.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final
+	jboss.host.name = katana-76
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = katana-76
+	jboss.qualified.host.name = katana-76
+	jboss.server.base.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone
+	jboss.server.config.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration
+	jboss.server.data.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/data
+	jboss.server.log.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/log
+	jboss.server.name = katana-76
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/tmp
+	jdk.debug = release
+	jdk.serialFilter = maxbytes=10485760;maxdepth=128;maxarray=100000;maxrefs=300000
+	line.separator = 
+
+	logging.configuration = file:/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/logging.properties
+	module.path = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/modules
+	native.encoding = UTF-8
+	org.jboss.boot.log.file = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Linux
+	os.version = 5.15.167.4-microsoft-standard-WSL2
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.library.path = /usr/lib/jvm/java-17-openjdk-amd64/lib
+	sun.cpu.endian = little
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/jboss-modules.jar -mp /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/modules org.jboss.as.standalone -Djboss.home.dir=/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final -Djboss.server.base.dir=/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	user.country = US
+	user.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/bin
+	user.home = /home/mushdi12
+	user.language = en
+	user.name = mushdi12
+	user.timezone = Europe/Moscow
+2025-05-29 14:33:57,746 DEBUG [org.jboss.as.config] (MSC service thread 1-2) VM Arguments: -D[Standalone] -Djdk.serialFilter=maxbytes=10485760;maxdepth=128;maxarray=100000;maxrefs=300000 -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true --add-exports=java.desktop/sun.awt=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldaps=ALL-UNNAMED --add-exports=jdk.naming.dns/com.sun.jndi.dns=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.management/javax.management=ALL-UNNAMED --add-opens=java.naming/javax.naming=ALL-UNNAMED -Djava.security.manager=allow -Dorg.jboss.boot.log.file=/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/log/server.log -Dlogging.configuration=file:/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/logging.properties 
+2025-05-29 14:33:58,211 INFO  [org.wildfly.security] (ServerService Thread Pool -- 28) ELY00001: WildFly Elytron version 2.2.3.Final
+2025-05-29 14:33:58,538 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 23) WFLYCTL0028: Attribute 'cluster' in the resource at address '/subsystem=ejb3/service=remote' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2025-05-29 14:33:58,747 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 20) WFLYDR0001: Content added at location /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/data/content/44/a5588348aa141f7e51270e45ac1d806814b2e2/content
+2025-05-29 14:33:58,758 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2025-05-29 14:33:58,768 INFO  [org.xnio] (MSC service thread 1-3) XNIO version 3.8.13.Final
+2025-05-29 14:33:58,772 INFO  [org.xnio.nio] (MSC service thread 1-3) XNIO NIO Implementation Version 3.8.13.Final
+2025-05-29 14:33:58,796 INFO  [org.wildfly.extension.elytron.oidc._private] (ServerService Thread Pool -- 53) WFLYOIDC0001: Activating WildFly Elytron OIDC Subsystem
+2025-05-29 14:33:58,796 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 55) WFLYCLINF0001: Activating Infinispan subsystem.
+2025-05-29 14:33:58,799 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 56) WFLYIO001: Worker 'default' has auto-configured to 24 IO threads with 192 max task threads based on your 12 available processors
+2025-05-29 14:33:58,804 INFO  [org.wildfly.extension.microprofile.config.smallrye] (ServerService Thread Pool -- 65) WFLYCONF0001: Activating MicroProfile Config Subsystem
+2025-05-29 14:33:58,805 INFO  [org.wildfly.extension.health] (ServerService Thread Pool -- 54) WFLYHEALTH0001: Activating Base Health Subsystem
+2025-05-29 14:33:58,810 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 57) WFLYRS0016: RESTEasy version 6.2.7.Final
+2025-05-29 14:33:58,811 INFO  [org.wildfly.extension.microprofile.jwt.smallrye] (ServerService Thread Pool -- 66) WFLYJWT0001: Activating MicroProfile JWT Subsystem
+2025-05-29 14:33:58,816 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2025-05-29 14:33:58,821 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 67) WFLYNAM0001: Activating Naming Subsystem
+2025-05-29 14:33:58,828 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 62) WFLYJSF0007: Activated the following Jakarta Server Faces Implementations: [main]
+2025-05-29 14:33:58,838 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: Activating WebServices Extension
+2025-05-29 14:33:58,840 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "backend.war" (runtime-name: "backend.war")
+2025-05-29 14:33:58,840 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "backend-1.0-SNAPSHOT.war" (runtime-name: "backend-1.0-SNAPSHOT.war")
+2025-05-29 14:33:58,846 INFO  [org.jboss.as.connector] (MSC service thread 1-8) WFLYJCA0009: Starting Jakarta Connectors Subsystem (WildFly/IronJacamar 3.0.8.Final)
+2025-05-29 14:33:58,845 INFO  [org.wildfly.extension.metrics] (ServerService Thread Pool -- 64) WFLYMETRICS0001: Activating Base Metrics Subsystem
+2025-05-29 14:33:58,868 INFO  [org.jboss.remoting] (MSC service thread 1-3) JBoss Remoting version 5.0.28.Final
+2025-05-29 14:33:58,881 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 2.2)
+2025-05-29 14:33:58,900 INFO  [org.jboss.as.naming] (MSC service thread 1-1) WFLYNAM0003: Starting Naming Service
+2025-05-29 14:33:58,901 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-5) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2025-05-29 14:33:58,904 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0018: Started Driver service with driver-name = h2
+2025-05-29 14:33:58,913 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0003: Undertow 2.3.12.Final starting
+2025-05-29 14:33:58,923 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-2) WFLYELY00023: KeyStore file '/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/application.keystore' does not exist. Used blank.
+2025-05-29 14:33:58,935 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-4) WFLYELY01084: KeyStore /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/application.keystore not found, it will be auto-generated on first use with a self-signed certificate for host localhost
+2025-05-29 14:33:58,949 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 192 (per class), which is derived from thread worker pool sizing.
+2025-05-29 14:33:58,949 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path '/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2025-05-29 14:33:58,969 INFO  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 48 (per class), which is derived from the number of CPUs on this host.
+2025-05-29 14:33:58,978 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0012: Started server default-server.
+2025-05-29 14:33:58,991 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) Queuing requests.
+2025-05-29 14:33:58,993 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0018: Host default-host starting
+2025-05-29 14:33:59,043 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-7) MSC000001: Failed to start service org.wildfly.undertow.listener.default: org.jboss.msc.service.StartException in service org.wildfly.undertow.listener.default: Address already in use /127.0.0.1:8080
+	at org.wildfly.extension.undertow@31.0.1.Final//org.wildfly.extension.undertow.ListenerService.start(ListenerService.java:195)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1617)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1580)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1438)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1990)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1363)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-29 14:33:59,066 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-6) MSC000001: Failed to start service org.wildfly.management.http.extensible: org.jboss.msc.service.StartException in service org.wildfly.management.http.extensible: java.net.BindException: Address already in use /127.0.0.1:9990
+	at org.jboss.as.server@23.0.3.Final//org.jboss.as.server.mgmt.UndertowHttpManagementService.start(UndertowHttpManagementService.java:412)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1617)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1580)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1438)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1990)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1363)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-29 14:33:59,072 INFO  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0493: Jakarta Enterprise Beans subsystem suspension complete
+2025-05-29 14:33:59,085 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-2) MSC000001: Failed to start service org.wildfly.undertow.listener.https: org.jboss.msc.service.StartException in service org.wildfly.undertow.listener.https: Address already in use /127.0.0.1:8443
+	at org.wildfly.extension.undertow@31.0.1.Final//org.wildfly.extension.undertow.ListenerService.start(ListenerService.java:195)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1617)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1580)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1438)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1990)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-29 14:33:59,117 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2025-05-29 14:33:59,190 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-5) WFLYDS0013: Started FileSystemDeploymentService for directory /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/deployments
+2025-05-29 14:33:59,886 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 83) WFLYUT0022: Unregistered web context: '/backend-1.0-SNAPSHOT' from server 'default-server'
+2025-05-29 14:33:59,896 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 86) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:33:59,899 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 86) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@799ff761
+2025-05-29 14:33:59,903 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 86) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:33:59,918 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment backend-1.0-SNAPSHOT.war (runtime-name: backend-1.0-SNAPSHOT.war) in 35ms
+2025-05-29 14:33:59,927 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "backend-1.0-SNAPSHOT.war" (runtime-name: "backend-1.0-SNAPSHOT.war")
+2025-05-29 14:33:59,926 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 87) WFLYUT0022: Unregistered web context: '/backend' from server 'default-server'
+2025-05-29 14:33:59,944 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 89) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'backend.war#default'
+2025-05-29 14:33:59,944 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 89) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@6832ec59
+2025-05-29 14:33:59,945 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 89) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'backend.war#default'
+2025-05-29 14:33:59,963 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment backend.war (runtime-name: backend.war) in 38ms
+2025-05-29 14:33:59,970 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "backend.war" (runtime-name: "backend.war")
+2025-05-29 14:34:01,326 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([
+    ("core-service" => "management"),
+    ("management-interface" => "http-interface")
+]) - failure description: {
+    "WFLYCTL0080: Failed services" => {"org.wildfly.management.http.extensible" => "java.net.BindException: Address already in use /127.0.0.1:9990"},
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.http-upgrade-registry.http-management"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => ["service jboss.remoting.remoting-http-upgrade-service.http-management is missing [jboss.http-upgrade-registry.http-management]"]
+}
+2025-05-29 14:34:01,327 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([
+    ("subsystem" => "remoting"),
+    ("http-connector" => "http-remoting-connector")
+]) - failure description: {
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.http-upgrade-registry.default"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => ["service jboss.remoting.remoting-http-upgrade-service.http-remoting-connector is missing [jboss.http-upgrade-registry.default]"]
+}
+2025-05-29 14:34:01,367 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([
+    ("subsystem" => "undertow"),
+    ("server" => "default-server"),
+    ("http-listener" => "default")
+]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.undertow.listener.default" => "Address already in use /127.0.0.1:8080"}}
+2025-05-29 14:34:01,368 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([
+    ("subsystem" => "undertow"),
+    ("server" => "default-server"),
+    ("https-listener" => "https")
+]) - failure description: {"WFLYCTL0080: Failed services" => {"org.wildfly.undertow.listener.https" => "Address already in use /127.0.0.1:8443"}}
+2025-05-29 14:34:01,369 ERROR [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0459: Triggering roll back due to missing management services.
+2025-05-29 14:34:01,370 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([
+    ("core-service" => "management"),
+    ("management-interface" => "http-interface")
+]) - failure description: {
+    "WFLYCTL0080: Failed services" => {"org.wildfly.management.http.extensible" => "java.net.BindException: Address already in use /127.0.0.1:9990"},
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.http-upgrade-registry.http-management"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => ["service jboss.remoting.remoting-http-upgrade-service.http-management is missing [jboss.http-upgrade-registry.http-management]"]
+}
+2025-05-29 14:34:01,392 ERROR [org.jboss.as.server] (ServerService Thread Pool -- 45) WFLYSRV0021: Deploy of deployment "backend.war" was rolled back with the following failure message: undefined
+2025-05-29 14:34:01,393 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment backend.war (runtime-name: backend.war) in 0ms
+2025-05-29 14:34:01,393 ERROR [org.jboss.as.server] (ServerService Thread Pool -- 45) WFLYSRV0021: Deploy of deployment "backend-1.0-SNAPSHOT.war" was rolled back with the following failure message: undefined
+2025-05-29 14:34:01,396 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0028: Stopped deployment backend-1.0-SNAPSHOT.war (runtime-name: backend-1.0-SNAPSHOT.war) in 2ms
+2025-05-29 14:34:01,398 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0019: Host default-host stopping
+2025-05-29 14:34:01,403 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2025-05-29 14:34:01,403 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2025-05-29 14:34:01,407 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0004: Undertow 2.3.12.Final stopping
+2025-05-29 14:34:01,409 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2025-05-29 14:34:01,468 FATAL [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0056: Server boot has failed in an unrecoverable manner; exiting. See previous messages for details. - Server configuration file in use: standalone.xml
+2025-05-29 14:34:01,481 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0050: WildFly Full 31.0.1.Final (WildFly Core 23.0.3.Final) stopped in 7ms
+2025-05-29 14:34:01,570 INFO  [org.jboss.as.jpa] (MSC service thread 1-8) WFLYJPA0002: Read persistence.xml for default
+2025-05-29 14:34:01,597 INFO  [org.jboss.as.jpa] (MSC service thread 1-5) WFLYJPA0002: Read persistence.xml for default
+2025-05-29 14:34:01,597 INFO  [org.jipijapa] (MSC service thread 1-4) JIPIORMV6020260: Second level cache enabled for backend.war#default
+2025-05-29 14:34:01,606 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment backend.war
+2025-05-29 14:34:01,609 INFO  [org.infinispan.CONTAINER] (ServerService Thread Pool -- 89) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2025-05-29 14:34:01,650 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'PointMongodbManger' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:app/backend/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:module/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:global/backend/PointMongodbManger
+	java:app/backend/PointMongodbManger
+	java:module/PointMongodbManger
+
+2025-05-29 14:34:01,650 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'UserMongodbManager' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:app/backend/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:module/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:global/backend/UserMongodbManager
+	java:app/backend/UserMongodbManager
+	java:module/UserMongodbManager
+
+2025-05-29 14:34:01,650 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'JwtUtil' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:app/backend/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:module/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:global/backend/JwtUtil
+	java:app/backend/JwtUtil
+	java:module/JwtUtil
+
+2025-05-29 14:34:01,651 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'AuthService' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/AuthService!com.example.backend.auth.AuthService
+	java:app/backend/AuthService!com.example.backend.auth.AuthService
+	java:module/AuthService!com.example.backend.auth.AuthService
+	java:global/backend/AuthService
+	java:app/backend/AuthService
+	java:module/AuthService
+
+2025-05-29 14:34:01,651 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'PointsService' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/PointsService!com.example.backend.points.PointsService
+	java:app/backend/PointsService!com.example.backend.points.PointsService
+	java:module/PointsService!com.example.backend.points.PointsService
+	java:global/backend/PointsService
+	java:app/backend/PointsService
+	java:module/PointsService
+
+2025-05-29 14:34:01,658 INFO  [org.jipijapa] (MSC service thread 1-6) JIPIORMV6020260: Second level cache enabled for backend-1.0-SNAPSHOT.war#default
+2025-05-29 14:34:01,665 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) WFLYWELD0003: Processing weld deployment backend-1.0-SNAPSHOT.war
+2025-05-29 14:34:01,670 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 89) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'backend.war#default'
+2025-05-29 14:34:01,670 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 91) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:34:01,671 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 89) HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29 14:34:01,671 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 91) HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29 14:34:01,691 INFO  [org.hibernate.cache.internal.RegionFactoryInitiator] (ServerService Thread Pool -- 91) HHH000025: Second-level cache region factory [org.infinispan.hibernate.cache.v62.InfinispanRegionFactory]
+2025-05-29 14:34:01,691 INFO  [org.hibernate.cache.internal.RegionFactoryInitiator] (ServerService Thread Pool -- 89) HHH000025: Second-level cache region factory [org.infinispan.hibernate.cache.v62.InfinispanRegionFactory]
+2025-05-29 14:34:01,696 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 89) Envers integration enabled? : true
+2025-05-29 14:34:01,698 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 91) Envers integration enabled? : true
+2025-05-29 14:34:01,700 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'PointMongodbManger' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:app/backend-1.0-SNAPSHOT/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:module/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:global/backend-1.0-SNAPSHOT/PointMongodbManger
+	java:app/backend-1.0-SNAPSHOT/PointMongodbManger
+	java:module/PointMongodbManger
+
+2025-05-29 14:34:01,701 WARN  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (verifyToken)
+2025-05-29 14:34:01,704 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'UserMongodbManager' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:app/backend-1.0-SNAPSHOT/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:module/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:global/backend-1.0-SNAPSHOT/UserMongodbManager
+	java:app/backend-1.0-SNAPSHOT/UserMongodbManager
+	java:module/UserMongodbManager
+
+2025-05-29 14:34:01,704 WARN  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (generateTokensByUser)
+2025-05-29 14:34:01,705 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'JwtUtil' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:app/backend-1.0-SNAPSHOT/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:module/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:global/backend-1.0-SNAPSHOT/JwtUtil
+	java:app/backend-1.0-SNAPSHOT/JwtUtil
+	java:module/JwtUtil
+
+2025-05-29 14:34:01,705 WARN  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (getUsernameFromToken)
+2025-05-29 14:34:01,705 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'AuthService' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/AuthService!com.example.backend.auth.AuthService
+	java:app/backend-1.0-SNAPSHOT/AuthService!com.example.backend.auth.AuthService
+	java:module/AuthService!com.example.backend.auth.AuthService
+	java:global/backend-1.0-SNAPSHOT/AuthService
+	java:app/backend-1.0-SNAPSHOT/AuthService
+	java:module/AuthService
+
+2025-05-29 14:34:01,706 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'PointsService' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/PointsService!com.example.backend.points.PointsService
+	java:app/backend-1.0-SNAPSHOT/PointsService!com.example.backend.points.PointsService
+	java:module/PointsService!com.example.backend.points.PointsService
+	java:global/backend-1.0-SNAPSHOT/PointsService
+	java:app/backend-1.0-SNAPSHOT/PointsService
+	java:module/PointsService
+
+2025-05-29 14:34:01,726 INFO  [org.jipijapa] (MSC service thread 1-1) JIPIORMV6020260: Second level cache enabled for backend.war#default
+2025-05-29 14:34:01,735 WARN  [org.jboss.as.jaxrs] (MSC service thread 1-1) WFLYRS0018: Explicit usage of Jackson annotation in a Jakarta RESTful Web Services deployment; the system will disable Jakarta JSON Binding processing for the current deployment. Consider setting the 'resteasy.preferJacksonOverJsonB' property to 'false' to restore Jakarta JSON Binding.
+2025-05-29 14:34:01,746 WARN  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (verifyToken)
+2025-05-29 14:34:01,746 WARN  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (generateTokensByUser)
+2025-05-29 14:34:01,746 WARN  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (getUsernameFromToken)
+2025-05-29 14:34:01,762 INFO  [org.jipijapa] (MSC service thread 1-3) JIPIORMV6020260: Second level cache enabled for backend-1.0-SNAPSHOT.war#default
+2025-05-29 14:34:01,765 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 91) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'backend.war#default'
+2025-05-29 14:34:01,770 WARN  [org.jboss.as.jaxrs] (MSC service thread 1-3) WFLYRS0018: Explicit usage of Jackson annotation in a Jakarta RESTful Web Services deployment; the system will disable Jakarta JSON Binding processing for the current deployment. Consider setting the 'resteasy.preferJacksonOverJsonB' property to 'false' to restore Jakarta JSON Binding.
+2025-05-29 14:34:01,800 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 91) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:34:02,004 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 87) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class com.example.backend.webApp.MainApp
+2025-05-29 14:34:02,004 INFO  [org.wildfly.security.soteria.original.SamRegistrationInstaller] (ServerService Thread Pool -- 91) Initializing Soteria 3.0.3.Final for context '/backend-1.0-SNAPSHOT'
+2025-05-29 14:34:02,004 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 87) RESTEASY002200: Adding class resource com.example.backend.auth.AuthController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:34:02,005 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 87) RESTEASY002200: Adding class resource com.example.backend.points.PointsController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:34:02,005 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 87) RESTEASY002205: Adding provider class com.example.backend.auth.jwt.JwtAuthenticationFilter from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:34:02,013 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 87) WFLYUT0021: Registered web context: '/backend' for server 'default-server'
+2025-05-29 14:34:02,043 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 91) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class com.example.backend.webApp.MainApp
+2025-05-29 14:34:02,044 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 91) RESTEASY002200: Adding class resource com.example.backend.auth.AuthController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:34:02,044 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 91) RESTEASY002200: Adding class resource com.example.backend.points.PointsController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:34:02,044 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 91) RESTEASY002205: Adding provider class com.example.backend.auth.jwt.JwtAuthenticationFilter from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:34:02,051 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 91) WFLYUT0021: Registered web context: '/backend-1.0-SNAPSHOT' for server 'default-server'
+2025-05-29 14:34:02,089 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) WFLYSRV0016: Replaced deployment "backend.war" with deployment "backend.war"
+2025-05-29 14:34:02,090 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) WFLYSRV0016: Replaced deployment "backend-1.0-SNAPSHOT.war" with deployment "backend-1.0-SNAPSHOT.war"
+2025-05-29 14:34:02,092 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 1) WFLYDR0002: Content removed from location /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/data/content/ed/3ab4c6f5bd1c771ed19e9147606cfb4f3ceb85/content
+2025-05-29 14:34:18,987 INFO  [org.jboss.modules] (main) JBoss Modules version 2.1.2.Final
+2025-05-29 14:34:19,418 INFO  [org.jboss.msc] (main) JBoss MSC version 1.5.2.Final
+2025-05-29 14:34:19,426 INFO  [org.jboss.threads] (main) JBoss Threads version 2.4.0.Final
+2025-05-29 14:34:19,509 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 31.0.1.Final (WildFly Core 23.0.3.Final) starting
+2025-05-29 14:34:19,510 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Configured system properties:
+	[Standalone] = 
+	file.encoding = UTF-8
+	file.separator = /
+	java.awt.headless = true
+	java.class.path = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/jboss-modules.jar
+	java.class.version = 61.0
+	java.home = /usr/lib/jvm/java-17-openjdk-amd64
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 17.0.14+7-Debian-1deb12u1
+	java.security.manager = allow
+	java.specification.maintenance.version = 1
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 17
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Debian
+	java.vendor.url = https://tracker.debian.org/openjdk-17
+	java.vendor.url.bug = https://bugs.debian.org/openjdk-17
+	java.version = 17.0.14
+	java.version.date = 2025-01-21
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 17
+	java.vm.vendor = Debian
+	java.vm.version = 17.0.14+7-Debian-1deb12u1
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.home.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final
+	jboss.host.name = katana-76
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = katana-76
+	jboss.qualified.host.name = katana-76
+	jboss.server.base.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone
+	jboss.server.config.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration
+	jboss.server.data.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/data
+	jboss.server.log.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/log
+	jboss.server.name = katana-76
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/tmp
+	jdk.debug = release
+	jdk.serialFilter = maxbytes=10485760;maxdepth=128;maxarray=100000;maxrefs=300000
+	line.separator = 
+
+	logging.configuration = file:/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/logging.properties
+	module.path = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/modules
+	native.encoding = UTF-8
+	org.jboss.boot.log.file = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Linux
+	os.version = 5.15.167.4-microsoft-standard-WSL2
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.library.path = /usr/lib/jvm/java-17-openjdk-amd64/lib
+	sun.cpu.endian = little
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/jboss-modules.jar -mp /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/modules org.jboss.as.standalone -Djboss.home.dir=/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final -Djboss.server.base.dir=/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	user.country = US
+	user.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/bin
+	user.home = /home/mushdi12
+	user.language = en
+	user.name = mushdi12
+	user.timezone = Europe/Moscow
+2025-05-29 14:34:19,511 DEBUG [org.jboss.as.config] (MSC service thread 1-2) VM Arguments: -D[Standalone] -Djdk.serialFilter=maxbytes=10485760;maxdepth=128;maxarray=100000;maxrefs=300000 -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true --add-exports=java.desktop/sun.awt=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldaps=ALL-UNNAMED --add-exports=jdk.naming.dns/com.sun.jndi.dns=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.management/javax.management=ALL-UNNAMED --add-opens=java.naming/javax.naming=ALL-UNNAMED -Djava.security.manager=allow -Dorg.jboss.boot.log.file=/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/log/server.log -Dlogging.configuration=file:/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/logging.properties 
+2025-05-29 14:34:19,990 INFO  [org.wildfly.security] (ServerService Thread Pool -- 26) ELY00001: WildFly Elytron version 2.2.3.Final
+2025-05-29 14:34:20,316 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 21) WFLYCTL0028: Attribute 'cluster' in the resource at address '/subsystem=ejb3/service=remote' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2025-05-29 14:34:20,473 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2025-05-29 14:34:20,482 INFO  [org.xnio] (MSC service thread 1-5) XNIO version 3.8.13.Final
+2025-05-29 14:34:20,486 INFO  [org.xnio.nio] (MSC service thread 1-5) XNIO NIO Implementation Version 3.8.13.Final
+2025-05-29 14:34:20,506 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 55) WFLYCLINF0001: Activating Infinispan subsystem.
+2025-05-29 14:34:20,508 INFO  [org.wildfly.extension.elytron.oidc._private] (ServerService Thread Pool -- 53) WFLYOIDC0001: Activating WildFly Elytron OIDC Subsystem
+2025-05-29 14:34:20,513 INFO  [org.wildfly.extension.microprofile.config.smallrye] (ServerService Thread Pool -- 65) WFLYCONF0001: Activating MicroProfile Config Subsystem
+2025-05-29 14:34:20,515 INFO  [org.wildfly.extension.health] (ServerService Thread Pool -- 54) WFLYHEALTH0001: Activating Base Health Subsystem
+2025-05-29 14:34:20,516 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 56) WFLYIO001: Worker 'default' has auto-configured to 24 IO threads with 192 max task threads based on your 12 available processors
+2025-05-29 14:34:20,517 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 57) WFLYRS0016: RESTEasy version 6.2.7.Final
+2025-05-29 14:34:20,518 INFO  [org.wildfly.extension.microprofile.jwt.smallrye] (ServerService Thread Pool -- 66) WFLYJWT0001: Activating MicroProfile JWT Subsystem
+2025-05-29 14:34:20,525 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 67) WFLYNAM0001: Activating Naming Subsystem
+2025-05-29 14:34:20,525 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 62) WFLYJSF0007: Activated the following Jakarta Server Faces Implementations: [main]
+2025-05-29 14:34:20,527 INFO  [org.jboss.as.connector] (MSC service thread 1-5) WFLYJCA0009: Starting Jakarta Connectors Subsystem (WildFly/IronJacamar 3.0.8.Final)
+2025-05-29 14:34:20,538 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2025-05-29 14:34:20,542 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "backend-1.0-SNAPSHOT.war" (runtime-name: "backend-1.0-SNAPSHOT.war")
+2025-05-29 14:34:20,542 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "backend.war" (runtime-name: "backend.war")
+2025-05-29 14:34:20,544 INFO  [org.wildfly.extension.metrics] (ServerService Thread Pool -- 64) WFLYMETRICS0001: Activating Base Metrics Subsystem
+2025-05-29 14:34:20,547 INFO  [org.jboss.remoting] (MSC service thread 1-8) JBoss Remoting version 5.0.28.Final
+2025-05-29 14:34:20,548 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: Activating WebServices Extension
+2025-05-29 14:34:20,562 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 2.2)
+2025-05-29 14:34:20,568 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = h2
+2025-05-29 14:34:20,586 INFO  [org.jboss.as.naming] (MSC service thread 1-5) WFLYNAM0003: Starting Naming Service
+2025-05-29 14:34:20,588 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-8) WFLYELY00023: KeyStore file '/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/application.keystore' does not exist. Used blank.
+2025-05-29 14:34:20,590 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0003: Undertow 2.3.12.Final starting
+2025-05-29 14:34:20,598 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-3) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2025-05-29 14:34:20,605 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-3) WFLYELY01084: KeyStore /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/application.keystore not found, it will be auto-generated on first use with a self-signed certificate for host localhost
+2025-05-29 14:34:20,687 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 192 (per class), which is derived from thread worker pool sizing.
+2025-05-29 14:34:20,692 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 48 (per class), which is derived from the number of CPUs on this host.
+2025-05-29 14:34:20,699 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path '/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2025-05-29 14:34:20,700 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0012: Started server default-server.
+2025-05-29 14:34:20,701 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) Queuing requests.
+2025-05-29 14:34:20,703 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0018: Host default-host starting
+2025-05-29 14:34:20,743 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-2) MSC000001: Failed to start service org.wildfly.undertow.listener.default: org.jboss.msc.service.StartException in service org.wildfly.undertow.listener.default: Address already in use /127.0.0.1:8080
+	at org.wildfly.extension.undertow@31.0.1.Final//org.wildfly.extension.undertow.ListenerService.start(ListenerService.java:195)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1617)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1580)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1438)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1990)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-29 14:34:20,764 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-7) MSC000001: Failed to start service org.wildfly.management.http.extensible: org.jboss.msc.service.StartException in service org.wildfly.management.http.extensible: java.net.BindException: Address already in use /127.0.0.1:9990
+	at org.jboss.as.server@23.0.3.Final//org.jboss.as.server.mgmt.UndertowHttpManagementService.start(UndertowHttpManagementService.java:412)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1617)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1580)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1438)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1990)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1363)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-29 14:34:20,817 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-6) MSC000001: Failed to start service org.wildfly.undertow.listener.https: org.jboss.msc.service.StartException in service org.wildfly.undertow.listener.https: Address already in use /127.0.0.1:8443
+	at org.wildfly.extension.undertow@31.0.1.Final//org.wildfly.extension.undertow.ListenerService.start(ListenerService.java:195)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1617)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1580)
+	at org.jboss.msc@1.5.2.Final//org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1438)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1990)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads@2.4.0.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-29 14:34:20,820 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0493: Jakarta Enterprise Beans subsystem suspension complete
+2025-05-29 14:34:20,863 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2025-05-29 14:34:20,885 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-2) WFLYDS0013: Started FileSystemDeploymentService for directory /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/deployments
+2025-05-29 14:34:22,172 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 91) WFLYUT0022: Unregistered web context: '/backend-1.0-SNAPSHOT' from server 'default-server'
+2025-05-29 14:34:22,180 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 97) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:34:22,180 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 97) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@4c56917f
+2025-05-29 14:34:22,181 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 97) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:34:22,189 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment backend-1.0-SNAPSHOT.war (runtime-name: backend-1.0-SNAPSHOT.war) in 19ms
+2025-05-29 14:34:22,191 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "backend-1.0-SNAPSHOT.war" (runtime-name: "backend-1.0-SNAPSHOT.war")
+2025-05-29 14:34:22,198 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 97) WFLYUT0022: Unregistered web context: '/backend' from server 'default-server'
+2025-05-29 14:34:22,202 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 95) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'backend.war#default'
+2025-05-29 14:34:22,202 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 95) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@78286fd8
+2025-05-29 14:34:22,204 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 95) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'backend.war#default'
+2025-05-29 14:34:22,217 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment backend.war (runtime-name: backend.war) in 25ms
+2025-05-29 14:34:22,220 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "backend.war" (runtime-name: "backend.war")
+2025-05-29 14:34:22,752 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([
+    ("core-service" => "management"),
+    ("management-interface" => "http-interface")
+]) - failure description: {
+    "WFLYCTL0080: Failed services" => {"org.wildfly.management.http.extensible" => "java.net.BindException: Address already in use /127.0.0.1:9990"},
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.http-upgrade-registry.http-management"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => ["service jboss.remoting.remoting-http-upgrade-service.http-management is missing [jboss.http-upgrade-registry.http-management]"]
+}
+2025-05-29 14:34:22,753 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([
+    ("subsystem" => "remoting"),
+    ("http-connector" => "http-remoting-connector")
+]) - failure description: {
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.http-upgrade-registry.default"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => ["service jboss.remoting.remoting-http-upgrade-service.http-remoting-connector is missing [jboss.http-upgrade-registry.default]"]
+}
+2025-05-29 14:34:22,842 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([
+    ("subsystem" => "undertow"),
+    ("server" => "default-server"),
+    ("http-listener" => "default")
+]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.undertow.listener.default" => "Address already in use /127.0.0.1:8080"}}
+2025-05-29 14:34:22,843 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([
+    ("subsystem" => "undertow"),
+    ("server" => "default-server"),
+    ("https-listener" => "https")
+]) - failure description: {"WFLYCTL0080: Failed services" => {"org.wildfly.undertow.listener.https" => "Address already in use /127.0.0.1:8443"}}
+2025-05-29 14:34:22,845 ERROR [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0459: Triggering roll back due to missing management services.
+2025-05-29 14:34:22,845 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("add") failed - address: ([
+    ("core-service" => "management"),
+    ("management-interface" => "http-interface")
+]) - failure description: {
+    "WFLYCTL0080: Failed services" => {"org.wildfly.management.http.extensible" => "java.net.BindException: Address already in use /127.0.0.1:9990"},
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.http-upgrade-registry.http-management"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => ["service jboss.remoting.remoting-http-upgrade-service.http-management is missing [jboss.http-upgrade-registry.http-management]"]
+}
+2025-05-29 14:34:22,870 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment backend.war (runtime-name: backend.war) in 1ms
+2025-05-29 14:34:22,873 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-6) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2025-05-29 14:34:22,874 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2025-05-29 14:34:22,874 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0019: Host default-host stopping
+2025-05-29 14:34:22,876 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0004: Undertow 2.3.12.Final stopping
+2025-05-29 14:34:22,877 ERROR [org.jboss.as.server] (ServerService Thread Pool -- 45) WFLYSRV0021: Deploy of deployment "backend.war" was rolled back with the following failure message: undefined
+2025-05-29 14:34:22,878 ERROR [org.jboss.as.server] (ServerService Thread Pool -- 45) WFLYSRV0021: Deploy of deployment "backend-1.0-SNAPSHOT.war" was rolled back with the following failure message: undefined
+2025-05-29 14:34:22,880 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2025-05-29 14:34:22,880 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment backend-1.0-SNAPSHOT.war (runtime-name: backend-1.0-SNAPSHOT.war) in 1ms
+2025-05-29 14:34:22,937 FATAL [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0056: Server boot has failed in an unrecoverable manner; exiting. See previous messages for details. - Server configuration file in use: standalone.xml
+2025-05-29 14:34:22,948 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0050: WildFly Full 31.0.1.Final (WildFly Core 23.0.3.Final) stopped in 5ms
+2025-05-29 14:34:23,477 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) WFLYJPA0002: Read persistence.xml for default
+2025-05-29 14:34:23,527 INFO  [org.jipijapa] (MSC service thread 1-4) JIPIORMV6020260: Second level cache enabled for backend.war#default
+2025-05-29 14:34:23,534 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment backend.war
+2025-05-29 14:34:23,536 INFO  [org.infinispan.CONTAINER] (ServerService Thread Pool -- 95) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2025-05-29 14:34:23,551 INFO  [org.jboss.as.jpa] (MSC service thread 1-6) WFLYJPA0002: Read persistence.xml for default
+2025-05-29 14:34:23,558 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'PointMongodbManger' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:app/backend/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:module/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:global/backend/PointMongodbManger
+	java:app/backend/PointMongodbManger
+	java:module/PointMongodbManger
+
+2025-05-29 14:34:23,558 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'UserMongodbManager' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:app/backend/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:module/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:global/backend/UserMongodbManager
+	java:app/backend/UserMongodbManager
+	java:module/UserMongodbManager
+
+2025-05-29 14:34:23,558 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'JwtUtil' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:app/backend/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:module/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:global/backend/JwtUtil
+	java:app/backend/JwtUtil
+	java:module/JwtUtil
+
+2025-05-29 14:34:23,559 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'AuthService' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/AuthService!com.example.backend.auth.AuthService
+	java:app/backend/AuthService!com.example.backend.auth.AuthService
+	java:module/AuthService!com.example.backend.auth.AuthService
+	java:global/backend/AuthService
+	java:app/backend/AuthService
+	java:module/AuthService
+
+2025-05-29 14:34:23,559 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'PointsService' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/PointsService!com.example.backend.points.PointsService
+	java:app/backend/PointsService!com.example.backend.points.PointsService
+	java:module/PointsService!com.example.backend.points.PointsService
+	java:global/backend/PointsService
+	java:app/backend/PointsService
+	java:module/PointsService
+
+2025-05-29 14:34:23,571 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 95) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'backend.war#default'
+2025-05-29 14:34:23,571 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 95) HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29 14:34:23,579 INFO  [org.hibernate.cache.internal.RegionFactoryInitiator] (ServerService Thread Pool -- 95) HHH000025: Second-level cache region factory [org.infinispan.hibernate.cache.v62.InfinispanRegionFactory]
+2025-05-29 14:34:23,582 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 95) Envers integration enabled? : true
+2025-05-29 14:34:23,585 INFO  [org.jipijapa] (MSC service thread 1-3) JIPIORMV6020260: Second level cache enabled for backend-1.0-SNAPSHOT.war#default
+2025-05-29 14:34:23,586 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 95) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:34:23,587 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 95) HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29 14:34:23,593 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) WFLYWELD0003: Processing weld deployment backend-1.0-SNAPSHOT.war
+2025-05-29 14:34:23,594 INFO  [org.hibernate.cache.internal.RegionFactoryInitiator] (ServerService Thread Pool -- 95) HHH000025: Second-level cache region factory [org.infinispan.hibernate.cache.v62.InfinispanRegionFactory]
+2025-05-29 14:34:23,598 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 95) Envers integration enabled? : true
+2025-05-29 14:34:23,600 WARN  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (verifyToken)
+2025-05-29 14:34:23,600 WARN  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (generateTokensByUser)
+2025-05-29 14:34:23,600 WARN  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (getUsernameFromToken)
+2025-05-29 14:34:23,614 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'PointMongodbManger' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:app/backend-1.0-SNAPSHOT/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:module/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:global/backend-1.0-SNAPSHOT/PointMongodbManger
+	java:app/backend-1.0-SNAPSHOT/PointMongodbManger
+	java:module/PointMongodbManger
+
+2025-05-29 14:34:23,615 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'UserMongodbManager' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:app/backend-1.0-SNAPSHOT/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:module/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:global/backend-1.0-SNAPSHOT/UserMongodbManager
+	java:app/backend-1.0-SNAPSHOT/UserMongodbManager
+	java:module/UserMongodbManager
+
+2025-05-29 14:34:23,615 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'JwtUtil' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:app/backend-1.0-SNAPSHOT/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:module/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:global/backend-1.0-SNAPSHOT/JwtUtil
+	java:app/backend-1.0-SNAPSHOT/JwtUtil
+	java:module/JwtUtil
+
+2025-05-29 14:34:23,615 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'AuthService' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/AuthService!com.example.backend.auth.AuthService
+	java:app/backend-1.0-SNAPSHOT/AuthService!com.example.backend.auth.AuthService
+	java:module/AuthService!com.example.backend.auth.AuthService
+	java:global/backend-1.0-SNAPSHOT/AuthService
+	java:app/backend-1.0-SNAPSHOT/AuthService
+	java:module/AuthService
+
+2025-05-29 14:34:23,615 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'PointsService' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/PointsService!com.example.backend.points.PointsService
+	java:app/backend-1.0-SNAPSHOT/PointsService!com.example.backend.points.PointsService
+	java:module/PointsService!com.example.backend.points.PointsService
+	java:global/backend-1.0-SNAPSHOT/PointsService
+	java:app/backend-1.0-SNAPSHOT/PointsService
+	java:module/PointsService
+
+2025-05-29 14:34:23,616 INFO  [org.jipijapa] (MSC service thread 1-5) JIPIORMV6020260: Second level cache enabled for backend.war#default
+2025-05-29 14:34:23,626 WARN  [org.jboss.as.jaxrs] (MSC service thread 1-5) WFLYRS0018: Explicit usage of Jackson annotation in a Jakarta RESTful Web Services deployment; the system will disable Jakarta JSON Binding processing for the current deployment. Consider setting the 'resteasy.preferJacksonOverJsonB' property to 'false' to restore Jakarta JSON Binding.
+2025-05-29 14:34:23,654 WARN  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (verifyToken)
+2025-05-29 14:34:23,655 WARN  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (generateTokensByUser)
+2025-05-29 14:34:23,655 WARN  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (getUsernameFromToken)
+2025-05-29 14:34:23,659 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 95) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'backend.war#default'
+2025-05-29 14:34:23,668 INFO  [org.jipijapa] (MSC service thread 1-2) JIPIORMV6020260: Second level cache enabled for backend-1.0-SNAPSHOT.war#default
+2025-05-29 14:34:23,676 WARN  [org.jboss.as.jaxrs] (MSC service thread 1-2) WFLYRS0018: Explicit usage of Jackson annotation in a Jakarta RESTful Web Services deployment; the system will disable Jakarta JSON Binding processing for the current deployment. Consider setting the 'resteasy.preferJacksonOverJsonB' property to 'false' to restore Jakarta JSON Binding.
+2025-05-29 14:34:23,702 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 95) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:34:23,825 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 95) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class com.example.backend.webApp.MainApp
+2025-05-29 14:34:23,826 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 95) RESTEASY002205: Adding provider class com.example.backend.auth.jwt.JwtAuthenticationFilter from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:34:23,826 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 95) RESTEASY002200: Adding class resource com.example.backend.auth.AuthController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:34:23,826 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 95) RESTEASY002200: Adding class resource com.example.backend.points.PointsController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:34:23,834 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 95) WFLYUT0021: Registered web context: '/backend' for server 'default-server'
+2025-05-29 14:34:23,851 INFO  [org.wildfly.security.soteria.original.SamRegistrationInstaller] (ServerService Thread Pool -- 92) Initializing Soteria 3.0.3.Final for context '/backend-1.0-SNAPSHOT'
+2025-05-29 14:34:23,877 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 92) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class com.example.backend.webApp.MainApp
+2025-05-29 14:34:23,877 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 92) RESTEASY002200: Adding class resource com.example.backend.auth.AuthController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:34:23,877 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 92) RESTEASY002205: Adding provider class com.example.backend.auth.jwt.JwtAuthenticationFilter from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:34:23,877 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 92) RESTEASY002200: Adding class resource com.example.backend.points.PointsController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:34:23,885 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 92) WFLYUT0021: Registered web context: '/backend-1.0-SNAPSHOT' for server 'default-server'
+2025-05-29 14:34:23,897 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) WFLYSRV0016: Replaced deployment "backend.war" with deployment "backend.war"
+2025-05-29 14:34:23,898 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) WFLYSRV0016: Replaced deployment "backend-1.0-SNAPSHOT.war" with deployment "backend-1.0-SNAPSHOT.war"
+2025-05-29 14:35:24,030 INFO  [org.jboss.as.server] (Thread-1) WFLYSRV0272: Suspending server
+2025-05-29 14:35:24,032 INFO  [org.jboss.as.ejb3] (Thread-1) WFLYEJB0493: Jakarta Enterprise Beans subsystem suspension complete
+2025-05-29 14:35:24,035 INFO  [org.jboss.as.server] (Thread-1) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2025-05-29 14:35:24,036 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 92) WFLYUT0022: Unregistered web context: '/backend-1.0-SNAPSHOT' from server 'default-server'
+2025-05-29 14:35:24,038 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 100) WFLYUT0022: Unregistered web context: '/backend' from server 'default-server'
+2025-05-29 14:35:24,042 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-3) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2025-05-29 14:35:24,043 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0019: Host default-host stopping
+2025-05-29 14:35:24,046 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 102) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:35:24,046 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 106) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'backend.war#default'
+2025-05-29 14:35:24,047 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 102) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@6bcecfa
+2025-05-29 14:35:24,047 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 106) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@434c89cd
+2025-05-29 14:35:24,049 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 106) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'backend.war#default'
+2025-05-29 14:35:24,049 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 102) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:35:24,050 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-7) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2025-05-29 14:35:24,056 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2025-05-29 14:35:24,056 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0008: Undertow HTTP listener default suspending
+2025-05-29 14:35:24,056 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0008: Undertow HTTPS listener https suspending
+2025-05-29 14:35:24,057 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2025-05-29 14:35:24,057 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2025-05-29 14:35:24,058 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0004: Undertow 2.3.12.Final stopping
+2025-05-29 14:35:24,064 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment backend.war (runtime-name: backend.war) in 26ms
+2025-05-29 14:35:24,064 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment backend-1.0-SNAPSHOT.war (runtime-name: backend-1.0-SNAPSHOT.war) in 27ms
+2025-05-29 14:35:24,069 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0050: WildFly Full 31.0.1.Final (WildFly Core 23.0.3.Final) stopped in 32ms
+2025-05-29 14:35:31,394 INFO  [org.jboss.modules] (main) JBoss Modules version 2.1.2.Final
+2025-05-29 14:35:31,775 INFO  [org.jboss.msc] (main) JBoss MSC version 1.5.2.Final
+2025-05-29 14:35:31,781 INFO  [org.jboss.threads] (main) JBoss Threads version 2.4.0.Final
+2025-05-29 14:35:31,855 INFO  [org.jboss.as] (MSC service thread 1-3) WFLYSRV0049: WildFly Full 31.0.1.Final (WildFly Core 23.0.3.Final) starting
+2025-05-29 14:35:31,856 DEBUG [org.jboss.as.config] (MSC service thread 1-3) Configured system properties:
+	[Standalone] = 
+	file.encoding = UTF-8
+	file.separator = /
+	java.awt.headless = true
+	java.class.path = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/jboss-modules.jar
+	java.class.version = 61.0
+	java.home = /usr/lib/jvm/java-17-openjdk-amd64
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 17.0.14+7-Debian-1deb12u1
+	java.security.manager = allow
+	java.specification.maintenance.version = 1
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 17
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Debian
+	java.vendor.url = https://tracker.debian.org/openjdk-17
+	java.vendor.url.bug = https://bugs.debian.org/openjdk-17
+	java.version = 17.0.14
+	java.version.date = 2025-01-21
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 17
+	java.vm.vendor = Debian
+	java.vm.version = 17.0.14+7-Debian-1deb12u1
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.home.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final
+	jboss.host.name = katana-76
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = katana-76
+	jboss.qualified.host.name = katana-76
+	jboss.server.base.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone
+	jboss.server.config.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration
+	jboss.server.data.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/data
+	jboss.server.log.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/log
+	jboss.server.name = katana-76
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/tmp
+	jdk.debug = release
+	jdk.serialFilter = maxbytes=10485760;maxdepth=128;maxarray=100000;maxrefs=300000
+	line.separator = 
+
+	logging.configuration = file:/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/logging.properties
+	module.path = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/modules
+	native.encoding = UTF-8
+	org.jboss.boot.log.file = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Linux
+	os.version = 5.15.167.4-microsoft-standard-WSL2
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.library.path = /usr/lib/jvm/java-17-openjdk-amd64/lib
+	sun.cpu.endian = little
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/jboss-modules.jar -mp /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/modules org.jboss.as.standalone -Djboss.home.dir=/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final -Djboss.server.base.dir=/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	user.country = US
+	user.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/bin
+	user.home = /home/mushdi12
+	user.language = en
+	user.name = mushdi12
+	user.timezone = Europe/Moscow
+2025-05-29 14:35:31,857 DEBUG [org.jboss.as.config] (MSC service thread 1-3) VM Arguments: -D[Standalone] -Djdk.serialFilter=maxbytes=10485760;maxdepth=128;maxarray=100000;maxrefs=300000 -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true --add-exports=java.desktop/sun.awt=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldaps=ALL-UNNAMED --add-exports=jdk.naming.dns/com.sun.jndi.dns=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.management/javax.management=ALL-UNNAMED --add-opens=java.naming/javax.naming=ALL-UNNAMED -Djava.security.manager=allow -Dorg.jboss.boot.log.file=/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/log/server.log -Dlogging.configuration=file:/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/logging.properties 
+2025-05-29 14:35:32,346 INFO  [org.wildfly.security] (ServerService Thread Pool -- 14) ELY00001: WildFly Elytron version 2.2.3.Final
+2025-05-29 14:35:32,744 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 21) WFLYCTL0028: Attribute 'cluster' in the resource at address '/subsystem=ejb3/service=remote' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2025-05-29 14:35:32,902 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2025-05-29 14:35:32,910 INFO  [org.xnio] (MSC service thread 1-5) XNIO version 3.8.13.Final
+2025-05-29 14:35:32,914 INFO  [org.xnio.nio] (MSC service thread 1-5) XNIO NIO Implementation Version 3.8.13.Final
+2025-05-29 14:35:32,936 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 55) WFLYCLINF0001: Activating Infinispan subsystem.
+2025-05-29 14:35:32,936 INFO  [org.wildfly.extension.elytron.oidc._private] (ServerService Thread Pool -- 53) WFLYOIDC0001: Activating WildFly Elytron OIDC Subsystem
+2025-05-29 14:35:32,937 INFO  [org.wildfly.extension.microprofile.jwt.smallrye] (ServerService Thread Pool -- 66) WFLYJWT0001: Activating MicroProfile JWT Subsystem
+2025-05-29 14:35:32,937 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 56) WFLYIO001: Worker 'default' has auto-configured to 24 IO threads with 192 max task threads based on your 12 available processors
+2025-05-29 14:35:32,938 INFO  [org.wildfly.extension.microprofile.config.smallrye] (ServerService Thread Pool -- 65) WFLYCONF0001: Activating MicroProfile Config Subsystem
+2025-05-29 14:35:32,938 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 57) WFLYRS0016: RESTEasy version 6.2.7.Final
+2025-05-29 14:35:32,941 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2025-05-29 14:35:32,946 INFO  [org.wildfly.extension.health] (ServerService Thread Pool -- 54) WFLYHEALTH0001: Activating Base Health Subsystem
+2025-05-29 14:35:32,952 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 62) WFLYJSF0007: Activated the following Jakarta Server Faces Implementations: [main]
+2025-05-29 14:35:32,955 INFO  [org.jboss.as.connector] (MSC service thread 1-6) WFLYJCA0009: Starting Jakarta Connectors Subsystem (WildFly/IronJacamar 3.0.8.Final)
+2025-05-29 14:35:32,957 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 67) WFLYNAM0001: Activating Naming Subsystem
+2025-05-29 14:35:32,958 INFO  [org.wildfly.extension.metrics] (ServerService Thread Pool -- 64) WFLYMETRICS0001: Activating Base Metrics Subsystem
+2025-05-29 14:35:32,964 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: Activating WebServices Extension
+2025-05-29 14:35:32,973 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0003: Undertow 2.3.12.Final starting
+2025-05-29 14:35:32,973 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "backend.war" (runtime-name: "backend.war")
+2025-05-29 14:35:32,973 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "backend-1.0-SNAPSHOT.war" (runtime-name: "backend-1.0-SNAPSHOT.war")
+2025-05-29 14:35:32,994 INFO  [org.jboss.remoting] (MSC service thread 1-8) JBoss Remoting version 5.0.28.Final
+2025-05-29 14:35:32,995 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 2.2)
+2025-05-29 14:35:33,000 INFO  [org.jboss.as.naming] (MSC service thread 1-5) WFLYNAM0003: Starting Naming Service
+2025-05-29 14:35:33,003 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0018: Started Driver service with driver-name = h2
+2025-05-29 14:35:33,005 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-5) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2025-05-29 14:35:33,050 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path '/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2025-05-29 14:35:33,063 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0012: Started server default-server.
+2025-05-29 14:35:33,064 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) Queuing requests.
+2025-05-29 14:35:33,066 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0018: Host default-host starting
+2025-05-29 14:35:33,068 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 192 (per class), which is derived from thread worker pool sizing.
+2025-05-29 14:35:33,082 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-3) WFLYELY00023: KeyStore file '/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/application.keystore' does not exist. Used blank.
+2025-05-29 14:35:33,118 INFO  [org.jboss.as.ejb3] (MSC service thread 1-6) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 48 (per class), which is derived from the number of CPUs on this host.
+2025-05-29 14:35:33,121 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-6) WFLYELY01084: KeyStore /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/application.keystore not found, it will be auto-generated on first use with a self-signed certificate for host localhost
+2025-05-29 14:35:33,156 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2025-05-29 14:35:33,187 INFO  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0493: Jakarta Enterprise Beans subsystem suspension complete
+2025-05-29 14:35:33,252 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2025-05-29 14:35:33,279 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2025-05-29 14:35:33,351 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-3) WFLYDS0013: Started FileSystemDeploymentService for directory /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/deployments
+2025-05-29 14:35:33,421 INFO  [org.jboss.ws.common.management] (MSC service thread 1-6) JBWS022052: Starting JBossWS 7.0.0.Final (Apache CXF 4.0.0) 
+2025-05-29 14:35:35,199 INFO  [org.jboss.as.jpa] (MSC service thread 1-6) WFLYJPA0002: Read persistence.xml for default
+2025-05-29 14:35:35,199 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) WFLYJPA0002: Read persistence.xml for default
+2025-05-29 14:35:35,344 INFO  [org.jipijapa] (MSC service thread 1-4) JIPIORMV6020260: Second level cache enabled for backend.war#default
+2025-05-29 14:35:35,344 INFO  [org.jipijapa] (MSC service thread 1-6) JIPIORMV6020260: Second level cache enabled for backend-1.0-SNAPSHOT.war#default
+2025-05-29 14:35:35,456 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment backend-1.0-SNAPSHOT.war
+2025-05-29 14:35:35,456 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment backend.war
+2025-05-29 14:35:35,549 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-5) HV000001: Hibernate Validator 8.0.1.Final
+2025-05-29 14:35:35,688 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'PointMongodbManger' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:app/backend/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:module/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:global/backend/PointMongodbManger
+	java:app/backend/PointMongodbManger
+	java:module/PointMongodbManger
+
+2025-05-29 14:35:35,688 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'PointMongodbManger' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:app/backend-1.0-SNAPSHOT/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:module/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:global/backend-1.0-SNAPSHOT/PointMongodbManger
+	java:app/backend-1.0-SNAPSHOT/PointMongodbManger
+	java:module/PointMongodbManger
+
+2025-05-29 14:35:35,688 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'UserMongodbManager' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:app/backend-1.0-SNAPSHOT/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:module/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:global/backend-1.0-SNAPSHOT/UserMongodbManager
+	java:app/backend-1.0-SNAPSHOT/UserMongodbManager
+	java:module/UserMongodbManager
+
+2025-05-29 14:35:35,688 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'UserMongodbManager' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:app/backend/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:module/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:global/backend/UserMongodbManager
+	java:app/backend/UserMongodbManager
+	java:module/UserMongodbManager
+
+2025-05-29 14:35:35,688 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'JwtUtil' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:app/backend-1.0-SNAPSHOT/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:module/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:global/backend-1.0-SNAPSHOT/JwtUtil
+	java:app/backend-1.0-SNAPSHOT/JwtUtil
+	java:module/JwtUtil
+
+2025-05-29 14:35:35,688 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'JwtUtil' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:app/backend/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:module/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:global/backend/JwtUtil
+	java:app/backend/JwtUtil
+	java:module/JwtUtil
+
+2025-05-29 14:35:35,689 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'AuthService' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/AuthService!com.example.backend.auth.AuthService
+	java:app/backend-1.0-SNAPSHOT/AuthService!com.example.backend.auth.AuthService
+	java:module/AuthService!com.example.backend.auth.AuthService
+	java:global/backend-1.0-SNAPSHOT/AuthService
+	java:app/backend-1.0-SNAPSHOT/AuthService
+	java:module/AuthService
+
+2025-05-29 14:35:35,689 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'AuthService' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/AuthService!com.example.backend.auth.AuthService
+	java:app/backend/AuthService!com.example.backend.auth.AuthService
+	java:module/AuthService!com.example.backend.auth.AuthService
+	java:global/backend/AuthService
+	java:app/backend/AuthService
+	java:module/AuthService
+
+2025-05-29 14:35:35,689 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'PointsService' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/PointsService!com.example.backend.points.PointsService
+	java:app/backend/PointsService!com.example.backend.points.PointsService
+	java:module/PointsService!com.example.backend.points.PointsService
+	java:global/backend/PointsService
+	java:app/backend/PointsService
+	java:module/PointsService
+
+2025-05-29 14:35:35,689 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'PointsService' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/PointsService!com.example.backend.points.PointsService
+	java:app/backend-1.0-SNAPSHOT/PointsService!com.example.backend.points.PointsService
+	java:module/PointsService!com.example.backend.points.PointsService
+	java:global/backend-1.0-SNAPSHOT/PointsService
+	java:app/backend-1.0-SNAPSHOT/PointsService
+	java:module/PointsService
+
+2025-05-29 14:35:35,812 INFO  [org.infinispan.CONTAINER] (ServerService Thread Pool -- 78) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2025-05-29 14:35:35,873 WARN  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (verifyToken)
+2025-05-29 14:35:35,873 WARN  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (verifyToken)
+2025-05-29 14:35:35,873 WARN  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (generateTokensByUser)
+2025-05-29 14:35:35,873 WARN  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (getUsernameFromToken)
+2025-05-29 14:35:35,873 WARN  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (generateTokensByUser)
+2025-05-29 14:35:35,874 WARN  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (getUsernameFromToken)
+2025-05-29 14:35:35,917 INFO  [org.jipijapa] (MSC service thread 1-7) JIPIORMV6020260: Second level cache enabled for backend.war#default
+2025-05-29 14:35:35,917 INFO  [org.jipijapa] (MSC service thread 1-2) JIPIORMV6020260: Second level cache enabled for backend-1.0-SNAPSHOT.war#default
+2025-05-29 14:35:35,960 WARN  [org.jboss.as.jaxrs] (MSC service thread 1-2) WFLYRS0018: Explicit usage of Jackson annotation in a Jakarta RESTful Web Services deployment; the system will disable Jakarta JSON Binding processing for the current deployment. Consider setting the 'resteasy.preferJacksonOverJsonB' property to 'false' to restore Jakarta JSON Binding.
+2025-05-29 14:35:35,960 WARN  [org.jboss.as.jaxrs] (MSC service thread 1-7) WFLYRS0018: Explicit usage of Jackson annotation in a Jakarta RESTful Web Services deployment; the system will disable Jakarta JSON Binding processing for the current deployment. Consider setting the 'resteasy.preferJacksonOverJsonB' property to 'false' to restore Jakarta JSON Binding.
+2025-05-29 14:35:36,007 INFO  [org.jboss.weld.Version] (MSC service thread 1-7) WELD-000900: 5.1.2 (Final)
+2025-05-29 14:35:36,238 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 78) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:35:36,238 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 79) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'backend.war#default'
+2025-05-29 14:35:36,254 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 78) HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29 14:35:36,254 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 79) HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29 14:35:36,317 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 79) HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-29 14:35:36,587 INFO  [org.hibernate.cache.internal.RegionFactoryInitiator] (ServerService Thread Pool -- 79) HHH000025: Second-level cache region factory [org.infinispan.hibernate.cache.v62.InfinispanRegionFactory]
+2025-05-29 14:35:36,587 INFO  [org.hibernate.cache.internal.RegionFactoryInitiator] (ServerService Thread Pool -- 78) HHH000025: Second-level cache region factory [org.infinispan.hibernate.cache.v62.InfinispanRegionFactory]
+2025-05-29 14:35:36,641 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 79) Envers integration enabled? : true
+2025-05-29 14:35:36,641 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 78) Envers integration enabled? : true
+2025-05-29 14:35:36,749 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 79) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:35:36,749 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 78) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'backend.war#default'
+2025-05-29 14:35:37,505 INFO  [org.wildfly.security.soteria.original.SamRegistrationInstaller] (ServerService Thread Pool -- 80) Initializing Soteria 3.0.3.Final for context '/backend-1.0-SNAPSHOT'
+2025-05-29 14:35:37,828 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 79) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class com.example.backend.webApp.MainApp
+2025-05-29 14:35:37,828 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 80) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class com.example.backend.webApp.MainApp
+2025-05-29 14:35:37,828 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 80) RESTEASY002200: Adding class resource com.example.backend.points.PointsController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:35:37,828 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 79) RESTEASY002200: Adding class resource com.example.backend.auth.AuthController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:35:37,828 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 80) RESTEASY002200: Adding class resource com.example.backend.auth.AuthController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:35:37,828 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 79) RESTEASY002205: Adding provider class com.example.backend.auth.jwt.JwtAuthenticationFilter from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:35:37,828 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 79) RESTEASY002200: Adding class resource com.example.backend.points.PointsController from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:35:37,828 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 80) RESTEASY002205: Adding provider class com.example.backend.auth.jwt.JwtAuthenticationFilter from Application class com.example.backend.webApp.MainApp
+2025-05-29 14:35:37,870 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 80) WFLYUT0021: Registered web context: '/backend-1.0-SNAPSHOT' for server 'default-server'
+2025-05-29 14:35:37,871 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 79) WFLYUT0021: Registered web context: '/backend' for server 'default-server'
+2025-05-29 14:35:37,920 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 45) WFLYSRV0010: Deployed "backend.war" (runtime-name : "backend.war")
+2025-05-29 14:35:37,921 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 45) WFLYSRV0010: Deployed "backend-1.0-SNAPSHOT.war" (runtime-name : "backend-1.0-SNAPSHOT.war")
+2025-05-29 14:35:37,945 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2025-05-29 14:35:37,948 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2025-05-29 14:35:37,949 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2025-05-29 14:35:37,950 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 31.0.1.Final (WildFly Core 23.0.3.Final) started in 6808ms - Started 672 of 872 services (327 services are lazy, passive or on-demand) - Server configuration file in use: standalone.xml
+2025-05-29 14:35:58,076 INFO  [org.mongodb.driver.client] (default task-2) MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.11.0"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.15.167.4-microsoft-standard-WSL2"}, "platform": "Java/Debian/17.0.14+7-Debian-1deb12u1"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@445db9d4, com.mongodb.Jep395RecordCodecProvider@677bb335, com.mongodb.KotlinCodecProvider@4fff959b]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2025-05-29 14:35:58,097 INFO  [org.mongodb.driver.cluster] (cluster-ClusterId{value='6838469ef419bd6153249832', description='null'}-localhost:27017) Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=19344793}
+2025-05-29 14:37:59,990 INFO  [org.jboss.as.server] (Thread-1) WFLYSRV0272: Suspending server
+2025-05-29 14:37:59,992 INFO  [org.jboss.as.ejb3] (Thread-1) WFLYEJB0493: Jakarta Enterprise Beans subsystem suspension complete
+2025-05-29 14:37:59,993 INFO  [org.jboss.as.server] (Thread-1) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2025-05-29 14:38:00,001 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-1) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2025-05-29 14:38:00,001 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 79) WFLYUT0022: Unregistered web context: '/backend' from server 'default-server'
+2025-05-29 14:38:00,003 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 88) WFLYUT0022: Unregistered web context: '/backend-1.0-SNAPSHOT' from server 'default-server'
+2025-05-29 14:38:00,007 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0019: Host default-host stopping
+2025-05-29 14:38:00,011 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 95) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'backend.war#default'
+2025-05-29 14:38:00,011 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 94) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:38:00,014 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 95) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@42832811
+2025-05-29 14:38:00,014 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 94) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@6a0cf082
+2025-05-29 14:38:00,018 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 95) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'backend.war#default'
+2025-05-29 14:38:00,018 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 94) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 14:38:00,020 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2025-05-29 14:38:00,023 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2025-05-29 14:38:00,026 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0008: Undertow HTTP listener default suspending
+2025-05-29 14:38:00,026 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0008: Undertow HTTPS listener https suspending
+2025-05-29 14:38:00,026 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2025-05-29 14:38:00,026 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2025-05-29 14:38:00,027 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0004: Undertow 2.3.12.Final stopping
+2025-05-29 14:38:00,035 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment backend-1.0-SNAPSHOT.war (runtime-name: backend-1.0-SNAPSHOT.war) in 37ms
+2025-05-29 14:38:00,036 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment backend.war (runtime-name: backend.war) in 38ms
+2025-05-29 14:38:00,041 INFO  [org.jboss.as] (MSC service thread 1-8) WFLYSRV0050: WildFly Full 31.0.1.Final (WildFly Core 23.0.3.Final) stopped in 45ms
+2025-05-29 20:02:56,990 INFO  [org.jboss.modules] (main) JBoss Modules version 2.1.2.Final
+2025-05-29 20:02:58,096 INFO  [org.jboss.msc] (main) JBoss MSC version 1.5.2.Final
+2025-05-29 20:02:58,105 INFO  [org.jboss.threads] (main) JBoss Threads version 2.4.0.Final
+2025-05-29 20:02:58,216 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 31.0.1.Final (WildFly Core 23.0.3.Final) starting
+2025-05-29 20:02:58,218 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Configured system properties:
+	[Standalone] = 
+	file.encoding = UTF-8
+	file.separator = /
+	java.awt.headless = true
+	java.class.path = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/jboss-modules.jar
+	java.class.version = 61.0
+	java.home = /usr/lib/jvm/java-17-openjdk-amd64
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 17.0.14+7-Debian-1deb12u1
+	java.security.manager = allow
+	java.specification.maintenance.version = 1
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 17
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Debian
+	java.vendor.url = https://tracker.debian.org/openjdk-17
+	java.vendor.url.bug = https://bugs.debian.org/openjdk-17
+	java.version = 17.0.14
+	java.version.date = 2025-01-21
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 17
+	java.vm.vendor = Debian
+	java.vm.version = 17.0.14+7-Debian-1deb12u1
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.home.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final
+	jboss.host.name = katana-76
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = katana-76
+	jboss.qualified.host.name = katana-76
+	jboss.server.base.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone
+	jboss.server.config.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration
+	jboss.server.data.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/data
+	jboss.server.log.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/log
+	jboss.server.name = katana-76
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/tmp
+	jdk.debug = release
+	jdk.serialFilter = maxbytes=10485760;maxdepth=128;maxarray=100000;maxrefs=300000
+	line.separator = 
+
+	logging.configuration = file:/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/logging.properties
+	module.path = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/modules
+	native.encoding = UTF-8
+	org.jboss.boot.log.file = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Linux
+	os.version = 5.15.167.4-microsoft-standard-WSL2
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.library.path = /usr/lib/jvm/java-17-openjdk-amd64/lib
+	sun.cpu.endian = little
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/jboss-modules.jar -mp /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/modules org.jboss.as.standalone -Djboss.home.dir=/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final -Djboss.server.base.dir=/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	user.country = US
+	user.dir = /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/bin
+	user.home = /home/mushdi12
+	user.language = en
+	user.name = mushdi12
+	user.timezone = Europe/Moscow
+2025-05-29 20:02:58,219 DEBUG [org.jboss.as.config] (MSC service thread 1-2) VM Arguments: -D[Standalone] -Djdk.serialFilter=maxbytes=10485760;maxdepth=128;maxarray=100000;maxrefs=300000 -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true --add-exports=java.desktop/sun.awt=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldaps=ALL-UNNAMED --add-exports=jdk.naming.dns/com.sun.jndi.dns=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.management/javax.management=ALL-UNNAMED --add-opens=java.naming/javax.naming=ALL-UNNAMED -Djava.security.manager=allow -Dorg.jboss.boot.log.file=/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/log/server.log -Dlogging.configuration=file:/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/logging.properties 
+2025-05-29 20:02:58,910 INFO  [org.wildfly.security] (ServerService Thread Pool -- 26) ELY00001: WildFly Elytron version 2.2.3.Final
+2025-05-29 20:02:59,534 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 33) WFLYCTL0028: Attribute 'cluster' in the resource at address '/subsystem=ejb3/service=remote' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2025-05-29 20:02:59,770 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2025-05-29 20:02:59,788 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.8.13.Final
+2025-05-29 20:02:59,798 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.8.13.Final
+2025-05-29 20:02:59,831 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 55) WFLYCLINF0001: Activating Infinispan subsystem.
+2025-05-29 20:02:59,835 INFO  [org.wildfly.extension.microprofile.jwt.smallrye] (ServerService Thread Pool -- 66) WFLYJWT0001: Activating MicroProfile JWT Subsystem
+2025-05-29 20:02:59,835 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2025-05-29 20:02:59,838 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 56) WFLYIO001: Worker 'default' has auto-configured to 24 IO threads with 192 max task threads based on your 12 available processors
+2025-05-29 20:02:59,838 INFO  [org.wildfly.extension.microprofile.config.smallrye] (ServerService Thread Pool -- 65) WFLYCONF0001: Activating MicroProfile Config Subsystem
+2025-05-29 20:02:59,850 INFO  [org.wildfly.extension.elytron.oidc._private] (ServerService Thread Pool -- 53) WFLYOIDC0001: Activating WildFly Elytron OIDC Subsystem
+2025-05-29 20:02:59,853 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 67) WFLYNAM0001: Activating Naming Subsystem
+2025-05-29 20:02:59,858 INFO  [org.wildfly.extension.health] (ServerService Thread Pool -- 54) WFLYHEALTH0001: Activating Base Health Subsystem
+2025-05-29 20:02:59,876 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 62) WFLYJSF0007: Activated the following Jakarta Server Faces Implementations: [main]
+2025-05-29 20:02:59,876 INFO  [org.jboss.as.connector] (MSC service thread 1-1) WFLYJCA0009: Starting Jakarta Connectors Subsystem (WildFly/IronJacamar 3.0.8.Final)
+2025-05-29 20:02:59,877 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "backend-1.0-SNAPSHOT.war" (runtime-name: "backend-1.0-SNAPSHOT.war")
+2025-05-29 20:02:59,877 INFO  [org.wildfly.extension.metrics] (ServerService Thread Pool -- 64) WFLYMETRICS0001: Activating Base Metrics Subsystem
+2025-05-29 20:02:59,878 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "backend.war" (runtime-name: "backend.war")
+2025-05-29 20:02:59,888 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: Activating WebServices Extension
+2025-05-29 20:02:59,897 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 2.2)
+2025-05-29 20:02:59,916 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 57) WFLYRS0016: RESTEasy version 6.2.7.Final
+2025-05-29 20:02:59,920 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0018: Started Driver service with driver-name = h2
+2025-05-29 20:02:59,934 INFO  [org.jboss.remoting] (MSC service thread 1-5) JBoss Remoting version 5.0.28.Final
+2025-05-29 20:02:59,935 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0003: Undertow 2.3.12.Final starting
+2025-05-29 20:02:59,935 INFO  [org.jboss.as.naming] (MSC service thread 1-8) WFLYNAM0003: Starting Naming Service
+2025-05-29 20:02:59,941 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-7) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2025-05-29 20:02:59,972 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-7) WFLYELY00023: KeyStore file '/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/application.keystore' does not exist. Used blank.
+2025-05-29 20:02:59,994 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-8) WFLYELY01084: KeyStore /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/configuration/application.keystore not found, it will be auto-generated on first use with a self-signed certificate for host localhost
+2025-05-29 20:03:00,025 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path '/home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2025-05-29 20:03:00,053 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0012: Started server default-server.
+2025-05-29 20:03:00,056 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 48 (per class), which is derived from the number of CPUs on this host.
+2025-05-29 20:03:00,056 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 192 (per class), which is derived from thread worker pool sizing.
+2025-05-29 20:03:00,057 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) Queuing requests.
+2025-05-29 20:03:00,058 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0018: Host default-host starting
+2025-05-29 20:03:00,144 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2025-05-29 20:03:00,187 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0493: Jakarta Enterprise Beans subsystem suspension complete
+2025-05-29 20:03:00,200 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2025-05-29 20:03:00,244 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2025-05-29 20:03:00,417 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-4) WFLYDS0013: Started FileSystemDeploymentService for directory /home/mushdi12/itmo/opi/lab3/wildfly-31.0.1.Final/standalone/deployments
+2025-05-29 20:03:00,538 INFO  [org.jboss.ws.common.management] (MSC service thread 1-6) JBWS022052: Starting JBossWS 7.0.0.Final (Apache CXF 4.0.0) 
+2025-05-29 20:03:02,894 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) WFLYJPA0002: Read persistence.xml for default
+2025-05-29 20:03:02,894 INFO  [org.jboss.as.jpa] (MSC service thread 1-6) WFLYJPA0002: Read persistence.xml for default
+2025-05-29 20:03:03,085 INFO  [org.jipijapa] (MSC service thread 1-7) JIPIORMV6020260: Second level cache enabled for backend-1.0-SNAPSHOT.war#default
+2025-05-29 20:03:03,085 INFO  [org.jipijapa] (MSC service thread 1-2) JIPIORMV6020260: Second level cache enabled for backend.war#default
+2025-05-29 20:03:03,242 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment backend-1.0-SNAPSHOT.war
+2025-05-29 20:03:03,242 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment backend.war
+2025-05-29 20:03:03,361 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-3) HV000001: Hibernate Validator 8.0.1.Final
+2025-05-29 20:03:03,545 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'PointMongodbManger' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:app/backend/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:module/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:global/backend/PointMongodbManger
+	java:app/backend/PointMongodbManger
+	java:module/PointMongodbManger
+
+2025-05-29 20:03:03,545 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'UserMongodbManager' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:app/backend/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:module/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:global/backend/UserMongodbManager
+	java:app/backend/UserMongodbManager
+	java:module/UserMongodbManager
+
+2025-05-29 20:03:03,545 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'JwtUtil' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:app/backend/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:module/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:global/backend/JwtUtil
+	java:app/backend/JwtUtil
+	java:module/JwtUtil
+
+2025-05-29 20:03:03,546 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'PointMongodbManger' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:app/backend-1.0-SNAPSHOT/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:module/PointMongodbManger!com.example.backend.points.mongodb.PointMongodbManger
+	java:global/backend-1.0-SNAPSHOT/PointMongodbManger
+	java:app/backend-1.0-SNAPSHOT/PointMongodbManger
+	java:module/PointMongodbManger
+
+2025-05-29 20:03:03,546 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'AuthService' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/AuthService!com.example.backend.auth.AuthService
+	java:app/backend/AuthService!com.example.backend.auth.AuthService
+	java:module/AuthService!com.example.backend.auth.AuthService
+	java:global/backend/AuthService
+	java:app/backend/AuthService
+	java:module/AuthService
+
+2025-05-29 20:03:03,546 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'UserMongodbManager' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:app/backend-1.0-SNAPSHOT/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:module/UserMongodbManager!com.example.backend.auth.mongodb.UserMongodbManager
+	java:global/backend-1.0-SNAPSHOT/UserMongodbManager
+	java:app/backend-1.0-SNAPSHOT/UserMongodbManager
+	java:module/UserMongodbManager
+
+2025-05-29 20:03:03,546 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'PointsService' in deployment unit 'deployment "backend.war"' are as follows:
+
+	java:global/backend/PointsService!com.example.backend.points.PointsService
+	java:app/backend/PointsService!com.example.backend.points.PointsService
+	java:module/PointsService!com.example.backend.points.PointsService
+	java:global/backend/PointsService
+	java:app/backend/PointsService
+	java:module/PointsService
+
+2025-05-29 20:03:03,546 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'JwtUtil' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:app/backend-1.0-SNAPSHOT/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:module/JwtUtil!com.example.backend.auth.jwt.JwtUtil
+	java:global/backend-1.0-SNAPSHOT/JwtUtil
+	java:app/backend-1.0-SNAPSHOT/JwtUtil
+	java:module/JwtUtil
+
+2025-05-29 20:03:03,547 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'AuthService' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/AuthService!com.example.backend.auth.AuthService
+	java:app/backend-1.0-SNAPSHOT/AuthService!com.example.backend.auth.AuthService
+	java:module/AuthService!com.example.backend.auth.AuthService
+	java:global/backend-1.0-SNAPSHOT/AuthService
+	java:app/backend-1.0-SNAPSHOT/AuthService
+	java:module/AuthService
+
+2025-05-29 20:03:03,547 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'PointsService' in deployment unit 'deployment "backend-1.0-SNAPSHOT.war"' are as follows:
+
+	java:global/backend-1.0-SNAPSHOT/PointsService!com.example.backend.points.PointsService
+	java:app/backend-1.0-SNAPSHOT/PointsService!com.example.backend.points.PointsService
+	java:module/PointsService!com.example.backend.points.PointsService
+	java:global/backend-1.0-SNAPSHOT/PointsService
+	java:app/backend-1.0-SNAPSHOT/PointsService
+	java:module/PointsService
+
+2025-05-29 20:03:03,755 INFO  [org.infinispan.CONTAINER] (ServerService Thread Pool -- 78) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2025-05-29 20:03:03,782 WARN  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (verifyToken)
+2025-05-29 20:03:03,782 WARN  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (verifyToken)
+2025-05-29 20:03:03,782 WARN  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (generateTokensByUser)
+2025-05-29 20:03:03,782 WARN  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (generateTokensByUser)
+2025-05-29 20:03:03,782 WARN  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (getUsernameFromToken)
+2025-05-29 20:03:03,782 WARN  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0131: Jakarta Enterprise Beans com.example.backend.auth.jwt.JwtUtil should not have a final or static method (getUsernameFromToken)
+2025-05-29 20:03:03,837 INFO  [org.jipijapa] (MSC service thread 1-8) JIPIORMV6020260: Second level cache enabled for backend.war#default
+2025-05-29 20:03:03,837 INFO  [org.jipijapa] (MSC service thread 1-7) JIPIORMV6020260: Second level cache enabled for backend-1.0-SNAPSHOT.war#default
+2025-05-29 20:03:03,884 WARN  [org.jboss.as.jaxrs] (MSC service thread 1-7) WFLYRS0018: Explicit usage of Jackson annotation in a Jakarta RESTful Web Services deployment; the system will disable Jakarta JSON Binding processing for the current deployment. Consider setting the 'resteasy.preferJacksonOverJsonB' property to 'false' to restore Jakarta JSON Binding.
+2025-05-29 20:03:03,884 WARN  [org.jboss.as.jaxrs] (MSC service thread 1-8) WFLYRS0018: Explicit usage of Jackson annotation in a Jakarta RESTful Web Services deployment; the system will disable Jakarta JSON Binding processing for the current deployment. Consider setting the 'resteasy.preferJacksonOverJsonB' property to 'false' to restore Jakarta JSON Binding.
+2025-05-29 20:03:03,933 INFO  [org.jboss.weld.Version] (MSC service thread 1-8) WELD-000900: 5.1.2 (Final)
+2025-05-29 20:03:04,256 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 78) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'backend.war#default'
+2025-05-29 20:03:04,256 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 79) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 20:03:04,280 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 79) HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29 20:03:04,280 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 78) HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29 20:03:04,378 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 79) HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-29 20:03:04,759 INFO  [org.hibernate.cache.internal.RegionFactoryInitiator] (ServerService Thread Pool -- 78) HHH000025: Second-level cache region factory [org.infinispan.hibernate.cache.v62.InfinispanRegionFactory]
+2025-05-29 20:03:04,759 INFO  [org.hibernate.cache.internal.RegionFactoryInitiator] (ServerService Thread Pool -- 79) HHH000025: Second-level cache region factory [org.infinispan.hibernate.cache.v62.InfinispanRegionFactory]
+2025-05-29 20:03:04,840 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 78) Envers integration enabled? : true
+2025-05-29 20:03:04,840 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 79) Envers integration enabled? : true
+2025-05-29 20:03:05,032 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 78) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'backend-1.0-SNAPSHOT.war#default'
+2025-05-29 20:03:05,032 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 79) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'backend.war#default'
+2025-05-29 20:03:06,245 INFO  [org.wildfly.security.soteria.original.SamRegistrationInstaller] (ServerService Thread Pool -- 81) Initializing Soteria 3.0.3.Final for context '/backend-1.0-SNAPSHOT'
+2025-05-29 20:03:06,840 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 78) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class com.example.backend.webApp.MainApp
+2025-05-29 20:03:06,840 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 81) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class com.example.backend.webApp.MainApp
+2025-05-29 20:03:06,840 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 78) RESTEASY002205: Adding provider class com.example.backend.auth.jwt.JwtAuthenticationFilter from Application class com.example.backend.webApp.MainApp
+2025-05-29 20:03:06,841 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 81) RESTEASY002200: Adding class resource com.example.backend.points.PointsController from Application class com.example.backend.webApp.MainApp
+2025-05-29 20:03:06,841 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 78) RESTEASY002200: Adding class resource com.example.backend.points.PointsController from Application class com.example.backend.webApp.MainApp
+2025-05-29 20:03:06,841 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 81) RESTEASY002200: Adding class resource com.example.backend.auth.AuthController from Application class com.example.backend.webApp.MainApp
+2025-05-29 20:03:06,841 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 78) RESTEASY002200: Adding class resource com.example.backend.auth.AuthController from Application class com.example.backend.webApp.MainApp
+2025-05-29 20:03:06,841 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 81) RESTEASY002205: Adding provider class com.example.backend.auth.jwt.JwtAuthenticationFilter from Application class com.example.backend.webApp.MainApp
+2025-05-29 20:03:06,898 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 81) WFLYUT0021: Registered web context: '/backend-1.0-SNAPSHOT' for server 'default-server'
+2025-05-29 20:03:06,898 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 78) WFLYUT0021: Registered web context: '/backend' for server 'default-server'
+2025-05-29 20:03:06,964 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 45) WFLYSRV0010: Deployed "backend.war" (runtime-name : "backend.war")
+2025-05-29 20:03:06,965 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 45) WFLYSRV0010: Deployed "backend-1.0-SNAPSHOT.war" (runtime-name : "backend-1.0-SNAPSHOT.war")
+2025-05-29 20:03:07,016 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2025-05-29 20:03:07,020 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2025-05-29 20:03:07,020 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2025-05-29 20:03:07,023 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 31.0.1.Final (WildFly Core 23.0.3.Final) started in 10420ms - Started 672 of 872 services (327 services are lazy, passive or on-demand) - Server configuration file in use: standalone.xml
+2025-05-29 20:04:11,281 INFO  [org.mongodb.driver.client] (default task-2) MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.11.0"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.15.167.4-microsoft-standard-WSL2"}, "platform": "Java/Debian/17.0.14+7-Debian-1deb12u1"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@2df9bcd, com.mongodb.Jep395RecordCodecProvider@2ad4658, com.mongodb.KotlinCodecProvider@6fa179ae]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2025-05-29 20:04:11,310 INFO  [org.mongodb.driver.cluster] (cluster-ClusterId{value='6838938bd1a3b318bee6eb31', description='null'}-localhost:27017) Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=29543078}
