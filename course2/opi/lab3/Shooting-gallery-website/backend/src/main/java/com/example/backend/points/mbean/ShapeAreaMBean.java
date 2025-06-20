@@ -5,3 +5,4 @@ public interface ShapeAreaMBean {
     double getArea();
     void clearPoints();
 }
+
