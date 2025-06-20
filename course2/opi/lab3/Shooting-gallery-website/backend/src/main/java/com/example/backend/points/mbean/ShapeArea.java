@@ -13,7 +13,7 @@ public class ShapeArea extends NotificationBroadcasterSupport implements ShapeAr
 
         if (points.size() == 3) {
             getArea();
-            points.remove(0); // удаляем самую старую точку, чтобы хранить последние 3
+            points.remove(0);
         }
         points.add(new double[]{x, y});
     }
@@ -21,7 +21,7 @@ public class ShapeArea extends NotificationBroadcasterSupport implements ShapeAr
     @Override
     public  double getArea() {
         if (points.size() < 3) {
-            return 0; // недостаточно точек для треугольника
+            return 0;
         }
         double[] p1 = points.get(0);
         double[] p2 = points.get(1);
