@@ -1,0 +1,18 @@
+ext.pathMapper = [:]
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/lib/util_rt.jar', '/tmp/tmpJ30kWi/util_rt.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/lib/external-system-rt.jar', '/tmp/tmpJ30kWi/external-system-rt.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/plugins/gradle/lib/gradle-tooling-extension-api.jar', '/tmp/tmp41DAec/gradle-tooling-extension-api.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/plugins/gradle/lib/gradle-tooling-extension-impl.jar', '/tmp/tmp41DAec/gradle-tooling-extension-impl.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/lib/util_rt.jar', '/tmp/tmpJ30kWi/util_rt.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/lib/external-system-rt.jar', '/tmp/tmpJ30kWi/external-system-rt.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/plugins/gradle/lib/gradle-tooling-extension-api.jar', '/tmp/tmp41DAec/gradle-tooling-extension-api.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/plugins/gradle/lib/gradle-tooling-extension-impl.jar', '/tmp/tmp41DAec/gradle-tooling-extension-impl.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/plugins/Kotlin/lib/kotlin-gradle-tooling.jar', '/tmp/tmpU7voTM/kotlin-gradle-tooling.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/plugins/micronaut/lib/micronaut-gradle-tooling.jar', '/tmp/tmpBXpSoH/micronaut-gradle-tooling.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/plugins/gradle/lib/gradle-api-8.13.jar', '/tmp/tmp41DAec/gradle-api-8.13.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/lib/util-8.jar', '/tmp/tmpJ30kWi/util-8.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/lib/opentelemetry.jar', '/tmp/tmpJ30kWi/opentelemetry.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/plugins/compose-ide-plugin/lib/modules/intellij.compose.ide.plugin.gradleTooling.rt.jar', '/tmp/tmptabVZ1/intellij.compose.ide.plugin.gradleTooling.rt.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/plugins/ktor/lib/ktor-gradle-tooling.jar', '/tmp/tmppS6Eiq/ktor-gradle-tooling.jar')
+ext.pathMapper.put("<<target java executable path>>", '/home/mushdi12/.jdks/ms-17.0.15/bin/java')
+ext.mapPath = { path -> pathMapper.get(path) ?: path }

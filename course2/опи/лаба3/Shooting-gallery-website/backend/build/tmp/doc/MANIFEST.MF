@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: backend
-Implementation-Version: 1.0-SNAPSHOT
-MD5-Checksum: fab78153ec6b2f83ccbcf59d49ad71bf
-SHA1-Checksum: 44a5588348aa141f7e51270e45ac1d806814b2e2
-

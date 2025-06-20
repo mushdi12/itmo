@@ -1,9 +1,0 @@
-com.example.backend.auth
-com.example.backend.auth.jwt
-com.example.backend.auth.mongodb
-com.example.backend.points
-com.example.backend.points.mongodb
-com.example.backend.utils.dtos
-com.example.backend.utils.exceptions
-com.example.backend.utils.mongodb
-com.example.backend.webApp

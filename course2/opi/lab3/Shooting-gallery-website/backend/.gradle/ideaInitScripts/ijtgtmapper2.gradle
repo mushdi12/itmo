@@ -1,0 +1,11 @@
+ext.pathMapper = [:]
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/lib/util_rt.jar', '/tmp/tmpHGSyyt/util_rt.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/lib/external-system-rt.jar', '/tmp/tmpHGSyyt/external-system-rt.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/plugins/gradle/lib/gradle-tooling-extension-api.jar', '/tmp/tmpj4ypSp/gradle-tooling-extension-api.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/plugins/gradle/lib/gradle-tooling-extension-impl.jar', '/tmp/tmpj4ypSp/gradle-tooling-extension-impl.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/lib/util_rt.jar', '/tmp/tmpHGSyyt/util_rt.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/lib/external-system-rt.jar', '/tmp/tmpHGSyyt/external-system-rt.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/plugins/gradle/lib/gradle-tooling-extension-api.jar', '/tmp/tmpj4ypSp/gradle-tooling-extension-api.jar')
+ext.pathMapper.put('C:/Users/bragi/AppData/Local/Programs/IntelliJ IDEA Ultimate/plugins/gradle/lib/gradle-tooling-extension-impl.jar', '/tmp/tmpj4ypSp/gradle-tooling-extension-impl.jar')
+ext.pathMapper.put("<<target java executable path>>", '/home/mushdi12/.jdks/ms-17.0.15/bin/java')
+ext.mapPath = { path -> pathMapper.get(path) ?: path }
