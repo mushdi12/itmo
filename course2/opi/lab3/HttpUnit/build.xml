@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="HttpUnit" default="run" basedir=".">
+    <description>Builds, tests, and runs the project HttpUnit.</description>
+
+    <!--
+      Добавляем classpath для всех JAR-файлов из папки lib,
+      чтобы обеспечить доступ к необходимым библиотекам (включая xml-apis.jar).
+    -->
+    <path id="project.class.path">
+        <fileset dir="lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+
+    <import file="nbproject/build-impl.xml"/>
+    <import file="nbproject/profiler-build-impl.xml"/>
+
+    <!--
+      Переопределяем цель run для запуска класса Main
+      с использованием classpath, включающего скомпилированные классы и все библиотеки из lib.
+    -->
+
+    <target name="show-classpath">
+        <pathconvert property="cp.string" pathsep=":" refid="project.class.path"/>
+        <echo message="Classpath: ${cp.string}"/>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="Main" fork="true" failonerror="true">
+            <classpath>
+                <path refid="project.class.path"/>
+                <pathelement location="${build.classes.dir}"/>
+            </classpath>
+        </java>
+    </target>
+</project>
