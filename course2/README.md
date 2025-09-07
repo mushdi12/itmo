@@ -30,4 +30,4 @@
   [Ссылка на материалы](https://docs.google.com/spreadsheets/d/1J4CJTEE185eR_LpWSQquGP7Rd6oErDuMxsUXKgmSGgI/edit?gid=1381012022#gid=1381012022)  
   [Ссылка на материалы Мартина](https://docs.google.com/document/d/1bFC7R5E4VsaDE-1zdu4utv8oRtJWfWsEK6HTyCOl0Pw/edit?tab=t.0#heading=h.fbuybvhfrcw)
 - **Техники публичных выступлений и презентаций** — 68 баллов, зачет 
-- **Физика** — ❌ баллов, оценка: 3/E  
+- **Физика** — 61 балл, оценка: 3/E  
