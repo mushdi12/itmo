@@ -1,0 +1,16 @@
+startDelaySeconds: 0
+lowercaseOutputName: true
+lowercaseOutputLabelNames: true
+
+whitelistObjectNames:
+  - "lab3:type=PointsCounter"
+  - "lab3:type=ShapeArea"
+
+rules:
+  - pattern: "lab3:type=PointsCounter#points"
+    name: "points_counter"
+    type: COUNTER
+
+  - pattern: "lab3:type=ShapeArea#area"
+    name: "shape_area"
+    type: GAUGE

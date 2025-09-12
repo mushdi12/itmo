@@ -32,6 +32,15 @@ dependencies {
     implementation 'com.auth0:java-jwt:4.4.0'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
     implementation 'jakarta.security.enterprise:jakarta.security.enterprise-api:3.0.0'
+
+    implementation 'io.micrometer:micrometer-core:1.12.3'
+    implementation 'io.micrometer:micrometer-registry-prometheus:1.12.3'
+
+    implementation 'io.prometheus:simpleclient:0.16.0'
+    implementation 'io.prometheus:simpleclient_common:0.16.0'
+    implementation 'io.prometheus:simpleclient_hotspot:0.16.0'
+    implementation 'io.prometheus:simpleclient_servlet:0.16.0'
+
     compileOnly 'org.projectlombok:lombok:1.18.28'
     annotationProcessor 'org.projectlombok:lombok:1.18.28'
 
@@ -570,6 +579,28 @@ ext {
 
 // сам сделал для удобства
 
+// Настройка JMX Exporter
+def jmxAgentPath = "${projectDir}/jmx_prometheus_javaagent.jar"
+def jmxConfigPath = "${projectDir}/config.yml"
+
+//tasks.register('runWithMetrics', JavaExec) {
+//    group = 'monitoring'
+//    description = 'Запуск с JMX Exporter для Prometheus'
+//
+//    classpath = sourceSets.main.runtimeClasspath
+//    mainClass.set("ru.ifmo.se.lab3.ShootingGalleryApplication")
+//
+//    def jmxAgentPath = "${projectDir}/jmx_prometheus_javaagent.jar"
+//    def jmxConfigPath = "${projectDir}/config.yml"
+//
+//    jvmArgs = [
+//            "-javaagent:${jmxAgentPath}=8080:${jmxConfigPath}"
+//    ]
+//}
+
+
+
+
 task compile {
     group = 'build'
     dependsOn 'compileJava'
@@ -590,12 +621,14 @@ task deploy(type: Copy) {
 task run(type: Exec) {
     dependsOn 'deploy'
     workingDir = file(wildflyBin)
+
+//    environment 'JAVA_OPTS', "-javaagent:${projectDir}/jmx_prometheus_javaagent.jar=8080:${projectDir}/config.yml"
+
     commandLine 'bash', 'standalone.sh'
 }
 
 task fullDeploy {
     group = 'application'
     description = 'Полный цикл: очистка, сборка, деплой и запуск WildFly'
-
     dependsOn  'deploy', 'run'
 }

@@ -6,6 +6,7 @@ import com.example.backend.points.PointsController;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,6 +18,7 @@ public class MainApp extends Application {
         resources.add(AuthController.class);
         resources.add(JwtAuthenticationFilter.class);
         resources.add(PointsController.class);
+        resources.add(com.example.backend.webApp.MetricsServlet.class);
         return resources;
     }
 }
