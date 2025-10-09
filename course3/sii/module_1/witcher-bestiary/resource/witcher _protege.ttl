@@ -1,0 +1,324 @@
+@prefix : <http://example.org/witcher#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# КЛАССЫ
+#################################################################
+
+:Monster a owl:Class .
+:Potion a owl:Class .
+:Sign a owl:Class .
+:Trait a owl:Class .
+
+#################################################################
+# ОБЪЕКТНЫЕ СВОЙСТВА
+#################################################################
+
+:hasStrongTrait a owl:ObjectProperty ;
+    rdfs:domain :Monster ;
+    rdfs:range :Trait .
+
+:hasWeakTrait a owl:ObjectProperty ;
+    rdfs:domain :Monster ;
+    rdfs:range :Trait .
+
+:effectiveAgainst a owl:ObjectProperty ;
+    rdfs:domain [ owl:unionOf (:Sign :Potion) ] ;
+    rdfs:range :Monster .
+
+#################################################################
+# ДАННЫЕ СВОЙСТВА
+#################################################################
+
+:hasEffect a owl:DatatypeProperty ;
+    rdfs:domain [ owl:unionOf (:Potion :Sign) ] ;
+    rdfs:range xsd:string .
+
+:hasBonus a owl:DatatypeProperty ;
+    rdfs:domain [ owl:unionOf (:Potion :Sign) ] ;
+    rdfs:range xsd:integer .
+
+:hasToxicity a owl:DatatypeProperty ;
+    rdfs:domain :Potion ;
+    rdfs:range xsd:integer .
+
+:hasDescription a owl:DatatypeProperty ;
+    rdfs:domain [ owl:unionOf (:Potion :Sign) ] ;
+    rdfs:range xsd:string .
+
+#################################################################
+# ТРЕЙТЫ (Trait)
+#################################################################
+
+:flight a :Trait .
+:claw_attack a :Trait .
+:forest_magic a :Trait .
+:strength a :Trait .
+:water_attack a :Trait .
+:group a :Trait .
+:speed a :Trait .
+:regeneration a :Trait .
+:venom a :Trait .
+:undead a :Trait .
+:bite a :Trait .
+:ghost a :Trait .
+:curse a :Trait .
+:stealth a :Trait .
+:vampiric a :Trait .
+:attack a :Trait .
+:poison a :Trait .
+:size a :Trait .
+:fear a :Trait .
+:agility a :Trait .
+
+#################################################################
+# МОНСТРЫ
+#################################################################
+
+:griffin a :Monster ;
+    :hasStrongTrait :flight, :claw_attack ;
+    :hasWeakTrait :thunderbolt, :aard .
+
+:leshen a :Monster ;
+    :hasStrongTrait :forest_magic, :strength ;
+    :hasWeakTrait :swallow, :decoction_leshen .
+
+:drowner a :Monster ;
+    :hasStrongTrait :water_attack, :group ;
+    :hasWeakTrait :necrophage_oil, :cat .
+
+:vampire a :Monster ;
+    :hasStrongTrait :speed, :regeneration ;
+    :hasWeakTrait :black_blood, :golden_oriole .
+
+:wyvern a :Monster ;
+    :hasStrongTrait :flight, :venom ;
+    :hasWeakTrait :thunderbolt, :decoction_wyvern .
+
+:ghoul a :Monster ;
+    :hasStrongTrait :strength, :group ;
+    :hasWeakTrait :necrophage_oil, :decoction_fiend .
+
+:nekker a :Monster ;
+    :hasStrongTrait :group, :stealth ;
+    :hasWeakTrait :necrophage_oil, :decoction_fiend .
+
+:archespore a :Monster ;
+    :hasStrongTrait :poison, :size ;
+    :hasWeakTrait :swallow, :decoction_leshen .
+
+:alghoul a :Monster ;
+    :hasStrongTrait :undead, :bite ;
+    :hasWeakTrait :necrophage_oil, :decoction_fiend .
+
+:wraith a :Monster ;
+    :hasStrongTrait :ghost, :speed ;
+    :hasWeakTrait :petri_philter, :yrden .
+
+:noonwraith a :Monster ;
+    :hasStrongTrait :ghost, :curse ;
+    :hasWeakTrait :petri_philter, :yrden .
+
+:nightwraith a :Monster ;
+    :hasStrongTrait :ghost, :stealth ;
+    :hasWeakTrait :petri_philter, :yrden .
+
+:ekimmara a :Monster ;
+    :hasStrongTrait :vampiric, :attack ;
+    :hasWeakTrait :decoction_ekimmara, :igni .
+
+:bruxa a :Monster ;
+    :hasStrongTrait :speed, :stealth ;
+    :hasWeakTrait :igni, :thunder .
+
+:cockatrice a :Monster ;
+    :hasStrongTrait :poison, :flight ;
+    :hasWeakTrait :thunderbolt, :decoction_wyvern .
+
+:werewolf a :Monster ;
+    :hasStrongTrait :strength, :speed ;
+    :hasWeakTrait :silver, :decoction_fiend .
+
+:fiend a :Monster ;
+    :hasStrongTrait :strength, :fear ;
+    :hasWeakTrait :thunder, :decoction_fiend .
+
+:troll a :Monster ;
+    :hasStrongTrait :strength, :regeneration ;
+    :hasWeakTrait :fire, :quen .
+
+:centipede a :Monster ;
+    :hasStrongTrait :poison, :speed ;
+    :hasWeakTrait :blizzard, :decoction_fiend .
+
+:harpy a :Monster ;
+    :hasStrongTrait :flight, :agility ;
+    :hasWeakTrait :thunderbolt, :aard .
+
+#################################################################
+# ЗЕЛЬЯ И ДЕКОКТЫ
+#################################################################
+
+:swallow a :Potion ;
+    :hasEffect "heal" ;
+    :hasBonus 30 ;
+    :hasToxicity 20 ;
+    :hasDescription "Ускоряет регенерацию здоровья" .
+
+:thunderbolt a :Potion ;
+    :hasEffect "attack" ;
+    :hasBonus 40 ;
+    :hasToxicity 30 ;
+    :hasDescription "Увеличивает урон от атак" .
+
+:tawny_owl a :Potion ;
+    :hasEffect "stamina" ;
+    :hasBonus 25 ;
+    :hasToxicity 25 ;
+    :hasDescription "Ускоряет восстановление выносливости" .
+
+:cat a :Potion ;
+    :hasEffect "night_vision" ;
+    :hasBonus 0 ;
+    :hasToxicity 10 ;
+    :hasDescription "Позволяет видеть в темноте" .
+
+:white_honey a :Potion ;
+    :hasEffect "detox" ;
+    :hasBonus -100 ;
+    :hasToxicity 0 ;
+    :hasDescription "Полностью выводит токсины и снимает эффекты зелий" .
+
+:blizzard a :Potion ;
+    :hasEffect "speed" ;
+    :hasBonus 20 ;
+    :hasToxicity 25 ;
+    :hasDescription "Замедляет время при уклонении" .
+
+:black_blood a :Potion ;
+    :hasEffect "anti_vampire" ;
+    :hasBonus 50 ;
+    :hasToxicity 35 ;
+    :hasDescription "Отравляет вампиров, когда они пьют кровь ведьмака" .
+
+:necrophage_oil a :Potion ;
+    :hasEffect "anti_undead" ;
+    :hasBonus 40 ;
+    :hasToxicity 20 ;
+    :hasDescription "Повышает урон против утопцев и гулей" .
+
+:golden_oriole a :Potion ;
+    :hasEffect "poison_resist" ;
+    :hasBonus 30 ;
+    :hasToxicity 25 ;
+    :hasDescription "Повышает устойчивость к ядам" .
+
+:killer_whale a :Potion ;
+    :hasEffect "breath" ;
+    :hasBonus 0 ;
+    :hasToxicity 15 ;
+    :hasDescription "Увеличивает запас дыхания под водой" .
+
+:full_moon a :Potion ;
+    :hasEffect "max_health" ;
+    :hasBonus 35 ;
+    :hasToxicity 30 ;
+    :hasDescription "Увеличивает максимальное здоровье ведьмака" .
+
+:maribor_forest a :Potion ;
+    :hasEffect "stamina_regen" ;
+    :hasBonus 20 ;
+    :hasToxicity 25 ;
+    :hasDescription "Ускоряет восстановление энергии" .
+
+:petri_philter a :Potion ;
+    :hasEffect "sign_power" ;
+    :hasBonus 25 ;
+    :hasToxicity 25 ;
+    :hasDescription "Усиливает знаки" .
+
+:thunder a :Potion ;
+    :hasEffect "damage_boost" ;
+    :hasBonus 45 ;
+    :hasToxicity 35 ;
+    :hasDescription "Повышает физическую силу" .
+
+:decoction_ekimmara a :Potion ;
+    :hasEffect "lifesteal" ;
+    :hasBonus 50 ;
+    :hasToxicity 40 ;
+    :hasDescription "Дарует вампиризм: здоровье восстанавливается при ударе" .
+
+:decoction_fiend a :Potion ;
+    :hasEffect "endurance" ;
+    :hasBonus 30 ;
+    :hasToxicity 30 ;
+    :hasDescription "Повышает выносливость в долгих боях" .
+
+:decoction_griffin a :Potion ;
+    :hasEffect "magic_boost" ;
+    :hasBonus 40 ;
+    :hasToxicity 35 ;
+    :hasDescription "Усиливает силу магических знаков" .
+
+:decoction_leshen a :Potion ;
+    :hasEffect "forest_power" ;
+    :hasBonus 45 ;
+    :hasToxicity 30 ;
+    :hasDescription "Увеличивает силу атак в лесных областях" .
+
+:decoction_troll a :Potion ;
+    :hasEffect "regen" ;
+    :hasBonus 25 ;
+    :hasToxicity 20 ;
+    :hasDescription "Повышает регенерацию здоровья" .
+
+:decoction_wyvern a :Potion ;
+    :hasEffect "aerial_boost" ;
+    :hasBonus 35 ;
+    :hasToxicity 30 ;
+    :hasDescription "Повышает урон по воздушным врагам" .
+
+#################################################################
+# ЗНАКИ
+#################################################################
+
+:aard a :Sign ;
+    :hasEffect "knockdown" ;
+    :hasBonus 30 ;
+    :hasDescription "Телепатический толчок, сбивает с ног врагов и монстров" ;
+    :effectiveAgainst :griffin, :wyvern .
+
+:igni a :Sign ;
+    :hasEffect "fire_damage" ;
+    :hasBonus 40 ;
+    :hasDescription "Огненный знак. Поджигает монстров и врагов" ;
+    :effectiveAgainst :wraith, :bruxa, :ekimmara .
+
+:yrden a :Sign ;
+    :hasEffect "trap" ;
+    :hasBonus 25 ;
+    :hasDescription "Создает магическую ловушку, замедляет врагов и призыв духов" ;
+    :effectiveAgainst :noonwraith, :nightwraith .
+
+:quen a :Sign ;
+    :hasEffect "shield" ;
+    :hasBonus 35 ;  
+    :hasDescription "Щит, который поглощает урон и защищает ведьмака" ;
+    :effectiveAgainst :troll .
+
+:axii a :Sign ;
+    :hasEffect "charm" ;
+    :hasBonus 20 ;
+    :hasDescription "Манипуляция разумом, временное подчинение противника" ;
+    :effectiveAgainst :human, :dwarf .
+
+#################################################################
+# ДОПОЛНИТЕЛЬНЫЕ МОНСТРЫ ДЛЯ ЗНАКОВ
+#################################################################
+
+:human a :Monster .
+:dwarf a :Monster .
