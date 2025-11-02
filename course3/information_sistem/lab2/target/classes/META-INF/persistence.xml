@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+                                 https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
+             version="3.2">
+
+    <persistence-unit name="bookPU" transaction-type="RESOURCE_LOCAL">
+
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+
+        <class>com.example.lab1.entities.Coordinates</class>
+        <class>com.example.lab1.entities.MagicCity</class>
+        <class>com.example.lab1.entities.Ring</class>
+        <class>com.example.lab1.entities.BookCreature</class>
+        <class>com.example.lab1.entities.ImportHistory</class>
+
+        <properties>
+            <property name="eclipselink.weaving" value="false"/>
+
+            <!-- Подключение к локальной PostgreSQL -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/studs"/>
+            <property name="jakarta.persistence.jdbc.user" value="postgres"/>
+            <property name="jakarta.persistence.jdbc.password" value="postgres"/>
+
+
+<!--            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>-->
+<!--            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/studs"/>-->
+<!--            <property name="jakarta.persistence.jdbc.user" value="s408319"/>-->
+<!--            <property name="jakarta.persistence.jdbc.password" value="TR7OeJKI2mTf9yYa"/>-->
+
+            <!-- Создание схемы при старте -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+
+            <!-- SQL вывод -->
+            <property name="eclipselink.logging.level" value="FINE"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>
+
+
+
