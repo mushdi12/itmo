@@ -18,7 +18,8 @@
 - **Системное программное обеспечение** —  баллов, оценка:
   [Ссылка на материалы](https://docs.google.com/spreadsheets/d/1HS_QH5DTEAveoB95N4QRkjfIdzMydeL6y_Da0fJyw5Y/edit?gid=0#gid=0)  
 - **Системы искусственного интеллекта** —  баллов, оценка:
-  [Ссылка на материалы](https://docs.google.com/spreadsheets/d/1YLxG57pELMSGewCEFr8X64uHlAPelKoD/edit?gid=738470393#gid=738470393)  
+  [Ссылка на материалы](https://docs.google.com/spreadsheets/d/1YLxG57pELMSGewCEFr8X64uHlAPelKoD/edit?gid=738470393#gid=738470393)
+  [Ссылка на материалы](https://docs.google.com/document/d/13aIlvu8iytST5iaqE0N26wbImoH0VtamVNZ4SyRf02o/edit?tab=t.0)
 ---
 
 ## 📚 6 семестр
