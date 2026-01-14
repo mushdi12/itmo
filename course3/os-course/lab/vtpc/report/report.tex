@@ -1,0 +1,144 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\geometry{margin=2cm}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  columns=fullflexible,
+  frame=single,
+  rulecolor=\color{black!20},
+}
+
+\begin{document}
+
+\begin{titlepage}
+  \begin{center}
+    {\large Университет ИТМО}\\[4mm]
+    {\large Факультет/направление: \underline{\hspace{7cm}}}\\[10mm]
+
+    {\LARGE \textbf{Лабораторная работа №2}}\\[2mm]
+    {\Large \textbf{Блочный кэш страниц (VT Page Cache)}}\\[6mm]
+
+    {\large Вариант: \textbf{Optimal (с подсказкой)}}\\[12mm]
+  \end{center}
+
+  \vfill
+
+  \begin{flushleft}
+    Студент: \textbf{Брагин Роман}, группа \textbf{P3316}\\
+    Преподаватель: \textbf{Сорокин Артём Николаевич}\\
+  \end{flushleft}
+
+  \vfill
+  \begin{center}
+    Санкт-Петербург, \the\year
+  \end{center}
+\end{titlepage}
+
+\section{Текст задания (кратко)}
+Необходимо реализовать блочный кэш страниц в user-space в виде динамической библиотеки на C.
+Библиотека должна предоставлять API, аналогичный системным вызовам: открытие/закрытие файла, чтение, запись, позиционирование, синхронизация.
+Операции чтения/записи на диск должны выполняться в обход page cache ОС.
+
+Вариант: \textbf{Optimal}. Для него требуется предоставить пользователю возможность подсказать момент следующего обращения к данным (например, через отдельную функцию \texttt{advice}).
+
+\section{Обзор реализации}
+\subsection{Структура проекта}
+\begin{itemize}
+  \item \texttt{lib/vtpc.c}, \texttt{lib/vtpc.h} --- реализация библиотеки кэша страниц.
+  \item \texttt{test/} --- тесты корректности (поведение сравнивается с \texttt{libc}).
+  \item \texttt{bench/io-load.c} --- IO-нагрузчик для сравнения производительности \texttt{libc} и \texttt{vtpc}.
+\end{itemize}
+
+\subsection{Реализованный API}
+Библиотека предоставляет функции:
+\begin{itemize}
+  \item \texttt{vtpc\_open}, \texttt{vtpc\_close}, \texttt{vtpc\_read}, \texttt{vtpc\_write}, \texttt{vtpc\_lseek}, \texttt{vtpc\_fsync}
+  \item \texttt{vtpc\_advice(fd, offset, next\_use)} --- подсказка для Optimal
+  \item алиасы \texttt{lab2\_*} для соответствия формату задания (например, \texttt{lab2\_open}, \texttt{lab2\_advice})
+\end{itemize}
+
+\subsection{Кэш страниц}
+\begin{itemize}
+  \item Кэш состоит из фиксированного числа страниц (\texttt{VTPC\_CACHE\_PAGES}), каждая страница имеет размер (\texttt{VTPC\_PAGE\_SIZE}).
+  \item Данные страниц хранятся в выровненных буферах (через \texttt{posix\_memalign}) для корректной работы с \texttt{O\_DIRECT}.
+  \item При \texttt{read/write} обрабатываются произвольные размеры и смещения: операция раскладывается на затронутые страницы, а работа с диском выполняется страничными блоками.
+  \item Модифицированные страницы помечаются как \texttt{dirty} и сбрасываются на диск при вытеснении/ \texttt{fsync}/ \texttt{close}.
+\end{itemize}
+
+\subsection{Обход page cache ОС}
+При открытии файла библиотека пытается использовать \texttt{O\_DIRECT}.
+Если файловая система не поддерживает \texttt{O\_DIRECT}, библиотека автоматически открывает файл без него, при этом старается минимизировать влияние page cache ОС (best-effort через \texttt{posix\_fadvise(..., DONTNEED)}).
+
+\subsection{Политика вытеснения Optimal}
+\begin{itemize}
+  \item Для каждой страницы поддерживается значение \texttt{next\_use} --- ``время'' следующего обращения.
+  \item При необходимости вытеснения выбирается страница с максимальным \texttt{next\_use} (Belady/Optimal).
+  \item При равенстве \texttt{next\_use} используется тай-брейк по давности доступа (LRU).
+  \item Пользователь задаёт \texttt{next\_use} через \texttt{vtpc\_advice/lab2\_advice}.
+\end{itemize}
+
+\section{Проверка корректности}
+Корректность проверялась тестами из каталога \texttt{test/}:
+\begin{itemize}
+  \item \texttt{test\_basic}
+  \item \texttt{test\_seq}
+  \item \texttt{test\_random}
+\end{itemize}
+
+Тесты запускаются через CTest:
+\begin{lstlisting}
+make test
+# или
+ctest --test-dir build/test --output-on-failure
+\end{lstlisting}
+
+\section{Замеры производительности (до/после)}
+\subsection{Методика}
+Для замеров использовался нагрузчик \texttt{bench/io-load} со следующими параметрами:
+\begin{itemize}
+  \item блок: 4096 байт
+  \item количество операций: 20000
+  \item диапазон: 0--262144 (256 КиБ, горячий набор данных)
+  \item порядок: random
+  \item сравнение:
+    \begin{itemize}
+      \item \texttt{libc}: \texttt{pread/pwrite} с \texttt{O\_DIRECT=on}
+      \item \texttt{vtpc}: библиотека кэша, \texttt{VTPC\_PAGE\_SIZE=4096}, \texttt{VTPC\_CACHE\_PAGES=64}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Результаты}
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{@{}lrrr@{}}
+    \toprule
+    Сценарий & libc O\_DIRECT (MB/s) & vtpc (MB/s) & Ускорение \\
+    \midrule
+    Random read (256 KiB hot set)  & 21.60  & 5032.23 & \(\approx 233\times\) \\
+    Random write (256 KiB hot set) & 17.51  & 4464.67 & \(\approx 255\times\) \\
+    \bottomrule
+  \end{tabular}
+  \caption{Пример сравнения производительности до/после внедрения page cache}
+\end{table}
+
+\textbf{Комментарий.} На ``горячем'' наборе данных (256 КиБ) кэш позволяет практически полностью убрать повторные обращения к диску: страницы читаются/записываются в RAM, а на диск сбрасываются агрегированно.
+
+\section{Вывод}
+В рамках работы реализован пользовательский page cache в виде динамической библиотеки на C с обходом page cache ОС и политикой вытеснения Optimal (Belady) с подсказками следующего обращения.
+Тесты корректности проходят, а на сценариях с повторным доступом к одному и тому же диапазону данных наблюдается существенный выигрыш по производительности.
+
+\end{document}
+
+
