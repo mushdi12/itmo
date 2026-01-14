@@ -1,0 +1,126 @@
+[
+  {
+    "name": "Gandalf",
+    "age": 2019,
+    "creatureType": "ELF",
+    "attackLevel": 95.5,
+    "defenseLevel": 120,
+    "creationDate": "2024-01-15T10:30:00",
+    "coordinates": {
+      "x": 100,
+      "y": 300.5
+    },
+    "creatureLocation": {
+      "name": "Rivendell",
+      "area": 1500,
+      "population": 5000,
+      "establishmentDate": "2000-03-15",
+      "governor": "ELF",
+      "capital": true,
+      "populationDensity": 3
+    },
+    "ring": {
+      "name": "Ring of Fire",
+      "power": 5000
+    }
+  },
+  {
+    "name": "Bilbo Baggins",
+    "age": 111,
+    "creatureType": "HOBBIT",
+    "attackLevel": 25.3,
+    "defenseLevel": 80,
+    "creationDate": "2024-01-20T14:20:00",
+    "coordinates": {
+      "x": -100,
+      "y": 200.75
+    },
+    "creatureLocation": {
+      "name": "Hobbiton",
+      "area": 800,
+      "population": 3500,
+      "establishmentDate": "1800-05-10",
+      "governor": "HOBBIT",
+      "capital": false,
+      "populationDensity": 4
+    },
+    "ring": {
+      "name": "One Ring",
+      "power": 9999
+    }
+  },
+  {
+    "name": "Aragorn",
+    "age": 87,
+    "creatureType": "HUMAN",
+    "attackLevel": 85.0,
+    "defenseLevel": 150,
+    "creationDate": "2024-02-01T09:15:00",
+    "coordinates": {
+      "x": 50,
+      "y": 450.25
+    },
+    "creatureLocation": {
+      "name": "Gondor",
+      "area": 2500,
+      "population": 15000,
+      "establishmentDate": "1000-01-01",
+      "governor": "HUMAN",
+      "capital": true,
+      "populationDensity": 6
+    },
+    "ring": {
+      "name": "Barahir Ring",
+      "power": 2500
+    }
+  },
+  {
+    "name": "Legolas",
+    "age": 2931,
+    "creatureType": "ELF",
+    "attackLevel": 92.8,
+    "defenseLevel": 110,
+    "creationDate": "2024-02-05T11:45:00",
+    "coordinates": {
+      "x": 200,
+      "y": 550.0
+    },
+    "creatureLocation": {
+      "name": "Lothlorien",
+      "area": 1200,
+      "population": 4000,
+      "establishmentDate": "1500-07-20",
+      "governor": "ELF",
+      "capital": true,
+      "populationDensity": 3
+    },
+    "ring": {
+      "name": "Air Ring",
+      "power": 3500
+    }
+  },
+  {
+    "name": "Gollum",
+    "age": 589,
+    "creatureType": "GOLLUM",
+    "attackLevel": 15.5,
+    "defenseLevel": 30,
+    "creationDate": "2024-02-10T16:00:00",
+    "coordinates": {
+      "x": -200,
+      "y": 100.5
+    },
+    "creatureLocation": {
+      "name": "Moria",
+      "area": 5000,
+      "population": 1,
+      "governor": "GOLLUM",
+      "capital": false,
+      "populationDensity": 1
+    },
+    "ring": {
+      "name": "Precious"
+    }
+  }
+]
+

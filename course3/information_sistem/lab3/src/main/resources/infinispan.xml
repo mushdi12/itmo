@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<infinispan xmlns="http://infinispan.org/config"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://infinispan.org/config https://infinispan.org/schemas/infinispan-config-14.0.xsd">
+    
+    <cache-container name="jpa-cache-container" default-cache="default">
+        <local-cache name="default">
+            <memory>
+                <object size="1000"/>
+            </memory>
+            <expiration lifespan="3600000" max-idle="1800000"/>
+        </local-cache>
+        
+        <!-- Cache для сущностей -->
+        <local-cache name="entity-cache">
+            <memory>
+                <object size="2000"/>
+            </memory>
+            <expiration lifespan="7200000" max-idle="3600000"/>
+        </local-cache>
+        
+        <!-- Cache для запросов -->
+        <local-cache name="query-cache">
+            <memory>
+                <object size="500"/>
+            </memory>
+            <expiration lifespan="1800000" max-idle="900000"/>
+        </local-cache>
+    </cache-container>
+</infinispan>
+
