@@ -42,6 +42,6 @@
 ```
 httpd -f ~/httpd-root/conf/httpd.conf -k start  
 java -DFCGI_PORT=24021 -jar web1.jar  
-ssh -p 2222 -L 8080:localhost:24020  s408319@helios.cs.ifmo.ru  
+ssh -p 2222 -L 8080:localhost:24020  sXXXXXX@helios.cs.ifmo.ru  
 ```
 

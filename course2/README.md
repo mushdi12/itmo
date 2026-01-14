@@ -26,7 +26,7 @@
 - **Математическая статистика** — 92 баллов, оценка: 5/A    
   [Ссылка на материалы](https://docs.google.com/spreadsheets/d/1f-9qO9MR1OXZoKwxUHf072E0DaGdr6kGtiyKfsHfF4o/edit?gid=0#gid=0)
 - **Методы оптимизации** — 67 баллов, зачет    
-- **Основы программной инженерии** — ❌ баллов, оценка: 3/E  
+- **Основы программной инженерии** — 61 баллов, оценка: 3/E  
   [Ссылка на материалы](https://docs.google.com/spreadsheets/d/1J4CJTEE185eR_LpWSQquGP7Rd6oErDuMxsUXKgmSGgI/edit?gid=1381012022#gid=1381012022)  
   [Ссылка на материалы Мартина](https://docs.google.com/document/d/1bFC7R5E4VsaDE-1zdu4utv8oRtJWfWsEK6HTyCOl0Pw/edit?tab=t.0#heading=h.fbuybvhfrcw)
 - **Техники публичных выступлений и презентаций** — 68 баллов, зачет 
